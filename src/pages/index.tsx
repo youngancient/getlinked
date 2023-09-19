@@ -1,4 +1,4 @@
-import { Hero } from '@/components/Main/Main';
+import { Hero, SectionTwo } from '@/components/Main/Main';
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -13,6 +13,7 @@ const Home = () => {
       </Head>
       <main>
         <Hero />
+        <SectionTwo />
       </main>
     </>
    );

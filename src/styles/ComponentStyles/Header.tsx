@@ -37,7 +37,7 @@ export const HeaderStyles = styled.header`
     padding: 2.12rem 3rem;
   }
   @media (min-width: 998px) {
-    padding: 2.12rem 8rem;
+    padding: 2.12rem 7rem;
     padding-bottom: 1.81rem;
     .mobile-menu {
       display: none;

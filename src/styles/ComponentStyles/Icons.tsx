@@ -8,24 +8,24 @@ export const LogoStyles = styled.h3`
   font-weight: 700;
   color: #fff;
   line-height: normal;
-  strong{
+  strong {
     color: #d434fe;
   }
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     font-size: 0.9375rem;
   }
 `;
 
-
 export const FancyRuleStyles = styled.span`
-  @media (max-width: 500px){
-    .big{
+  cursor: pointer;
+  @media (max-width: 500px) {
+    .big {
       display: none;
     }
   }
-  @media (min-width: 500px){
-    .small{
+  @media (min-width: 500px) {
+    .small {
       display: none;
     }
   }
-`
+`;
