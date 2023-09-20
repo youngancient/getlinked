@@ -1,6 +1,5 @@
-import { Hero, SectionTwo } from '@/components/Main/Main';
+import { FAQ, Hero, SectionFour, SectionThree, SectionTwo } from '@/components/Main/Main';
 import Head from 'next/head'
-import Image from 'next/image'
 
 const Home = () => {
   return ( 
@@ -14,6 +13,9 @@ const Home = () => {
       <main>
         <Hero />
         <SectionTwo />
+        <SectionThree />
+        <SectionFour />
+        <FAQ />
       </main>
     </>
    );

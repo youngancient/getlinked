@@ -1,10 +1,21 @@
-import { HeroStyles, SectionTwoStyles } from "@/styles/ComponentStyles/Main";
-import { FancyRule } from "../Icons/Icons";
+import {
+  HeroStyles,
+  SectionFiveStyles,
+  SectionFourStyles,
+  SectionThreeStyles,
+  SectionTwoStyles,
+} from "@/styles/ComponentStyles/Main";
+import { FancyRule, PurpleCircle } from "../Icons/Icons";
 import Image from "next/image";
-import { LargeBtnStyle } from "@/styles/ComponentStyles/Buttons";
+import {
+  LargeBtnStyle,
+  MediumBtnStyle,
+} from "@/styles/ComponentStyles/Buttons";
 import { Stopwatch } from "./Stopwatch";
 import { SectionHead } from "./Text";
 import { SmallTextStyles } from "@/styles/ComponentStyles/Text";
+import { JudgingCriteria } from "../../../constants/criteria";
+import { Accordion } from "./Accordion";
 
 export const Hero = () => {
   return (
@@ -46,7 +57,7 @@ export const Hero = () => {
                     className="chain"
                   />
                   <Image
-                    src="/assets/imole.png"
+                    src="/assets/imole.svg"
                     width={60}
                     height={60}
                     alt="imole"
@@ -94,7 +105,20 @@ export const SectionTwo = () => {
   return (
     <SectionTwoStyles>
       <div className="one">
-        <Image alt="the big idea" src="/assets/big_bulb.png" width={0} height={0} sizes="100vw" />
+        <Image
+          alt="the big idea"
+          src="/assets/big_bulb.png"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+        <Image
+          alt="arrow"
+          src="/assets/arrow.svg"
+          width={49.43}
+          height={57.974}
+          className="arrow"
+        />
       </div>
       <div className="two">
         <SectionHead
@@ -103,13 +127,101 @@ export const SectionTwo = () => {
         />
         <SmallTextStyles>
           Our tech hackathon is a melting pot of visionaries, and its purpose is
-          as clear as day: to shape the future. Whether you&rsquo;re a coding genius,
-          a design maverick, or a concept wizard, you&rsquo;ll have the chance to
-          transform your ideas into reality. Solving real-world problems,
-          pushing the boundaries of technology, and creating solutions that can
-          change the world, that&rsquo;s what we&rsquo;re all about!
+          as clear as day: to shape the future. Whether you&rsquo;re a coding
+          genius, a design maverick, or a concept wizard, you&rsquo;ll have the
+          chance to transform your ideas into reality. Solving real-world
+          problems, pushing the boundaries of technology, and creating solutions
+          that can change the world, that&rsquo;s what we&rsquo;re all about!
         </SmallTextStyles>
       </div>
     </SectionTwoStyles>
+  );
+};
+
+export const SectionThree = () => {
+  return (
+    <SectionThreeStyles>
+      <div className="one">
+        <div className="circle">
+          <PurpleCircle />
+        </div>
+        <Image
+          alt="guidelines"
+          src="/assets/guidelines.png"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+      </div>
+      <div className="two">
+        <SectionHead textOne="Rules and" textTwo="Guidelines" />
+        <SmallTextStyles>
+          Our tech hackathon is a melting pot of visionaries, and its purpose is
+          as clear as day: to shape the future. Whether you&rsquo;re a coding
+          genius, a design maverick, or a concept wizard, you&rsquo;ll have the
+          chance to transform your ideas into reality. Solving real-world
+          problems, pushing the boundaries of technology, and creating solutions
+          that can change the world, that&rsquo;s what we&rsquo;re all about!
+        </SmallTextStyles>
+      </div>
+    </SectionThreeStyles>
+  );
+};
+
+export const SectionFour = () => {
+  return (
+    <SectionFourStyles>
+      <div className="one">
+        <div className="circle">
+          <PurpleCircle />
+        </div>
+        <Image
+          alt="guidelines"
+          src="/assets/judge.png"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+      </div>
+      <div className="two">
+        <SectionHead textOne="Judging Criteria" textTwo="Key attributes" />
+        <div className="list">
+          {JudgingCriteria.map((ele, index) => (
+            <SmallTextStyles key={index}>
+              <strong>{ele.head}:</strong> {ele.body}
+            </SmallTextStyles>
+          ))}
+        </div>
+        <div className="btn">
+          <MediumBtnStyle>Read More</MediumBtnStyle>
+        </div>
+      </div>
+    </SectionFourStyles>
+  );
+};
+
+export const FAQ = () => {
+  return (
+    <SectionFiveStyles>
+      <div className="one">
+        <Image
+          alt="guidelines"
+          src="/assets/faq.png"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+      </div>
+      <div className="two">
+        <SectionHead textOne="Frequently Asked" textTwo="Questions" />
+        <SmallTextStyles>
+          We got answers to the questions that you might want to ask about
+          getlinked Hackathon 1.0
+        </SmallTextStyles>
+        <div className="accordion">
+          <Accordion />
+        </div>
+      </div>
+    </SectionFiveStyles>
   );
 };

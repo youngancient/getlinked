@@ -139,6 +139,9 @@ export const HeroStyles = styled.div`
     .banner {
       padding: 1rem;
     }
+    .two {
+      margin-top: 2rem;
+    }
   }
   @media (max-width: 500px) {
     h1 {
@@ -218,34 +221,204 @@ export const HeroStyles = styled.div`
 
 export const SectionTwoStyles = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  border: 2px solid #fff;
   display: flex;
-  .one img{
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .one img {
     width: 490px;
     height: 100%;
   }
-  .two{
+  .two {
     display: flex;
     flex-direction: column;
     gap: 3rem;
     justify-content: center;
   }
+  .one {
+    position: relative;
+  }
+  .arrow {
+    position: absolute;
+    bottom: 0;
+    flex-shrink: 0;
+    scale: 0.15;
+  }
   @media (max-width: 998px) {
+    padding: 3rem 0rem;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    .two{
+    gap: 3rem;
+    .two {
       align-items: center;
       gap: 2rem;
     }
+    .arrow {
+      right: 0;
+      scale: 0.1;
+      top: 50%;
+    }
+    .two p {
+      padding: 0rem 3rem;
+    }
   }
   @media (max-width: 500px) {
-    .one img{
+    .one img {
       width: 264.004px;
     }
-    .two{
+    .two {
       gap: 1.5rem;
+    }
+    .two p {
+      padding: 0rem 1.8rem;
+    }
+  }
+  @media (min-width: 998px) {
+    padding: 4rem 0rem;
+    gap: 3rem;
+    padding-left: 7rem;
+    .one,
+    .two {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+    }
+    .two p {
+      padding-right: 2.5rem;
+      width: 90%;
+    }
+    .arrow {
+      right: -35%;
+      top: 45%;
+    }
+  }
+`;
+
+export const SectionThreeStyles = styled(SectionTwoStyles)`
+  filter: drop-shadow(0 0 10px #903aff);
+
+  .circle {
+    position: absolute;
+    top: 15%;
+    right: 19%;
+    svg {
+      scale: 0.9;
+    }
+  }
+  .one img {
+    position: relative;
+    z-index: 5;
+  }
+  @media (max-width: 998px) {
+    gap: 1.5rem;
+    .circle {
+      top: 12%;
+      right: 17%;
+      svg {
+        scale: 0.75;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .circle {
+      display: none;
+    }
+    .one img {
+      width: 294px;
+      height: 100%;
+    }
+  }
+  @media (min-width: 998px) {
+    padding-left: 11.5rem;
+    flex-direction: row-reverse;
+    .one img {
+      width: 664px;
+      height: 100%;
+    }
+    .two p {
+      padding-right: 0rem;
+      width: 90%;
+    }
+  }
+`;
+
+export const SectionFourStyles = styled(SectionTwoStyles)`
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .circle {
+    position: absolute;
+    top: -5%;
+    left: 13.5%;
+    svg {
+      scale: 0.9;
+    }
+  }
+  .one img {
+    position: relative;
+    z-index: 5;
+  }
+  @media (max-width: 998px) {
+    gap: 1rem;
+    .circle {
+      position: absolute;
+      top: -7%;
+      left: 10%;
+      svg {
+        scale: 0.75;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .circle {
+      display: none;
+    }
+    .one img {
+      width: 332px;
+      height: 100%;
+    }
+  }
+  @media (min-width: 998px) {
+    padding: 6rem 0rem;
+    padding-left: 4rem;
+    .one img {
+      width: 710px;
+      height: 100%;
+    }
+    .list {
+      gap: 1.5rem;
+    }
+  }
+`;
+
+export const SectionFiveStyles = styled(SectionTwoStyles)`
+  @media (max-width: 998px) {
+    gap: 1.5rem;
+  }
+  @media (max-width: 500px) {
+    .one img {
+      width: 327px;
+      height: 100%;
+    }
+  }
+  @media (min-width: 998px) {
+    flex-direction: row-reverse;
+    padding-left: 11.5rem;
+    .one img {
+      width: 741px;
+      height: 100%;
+    }
+    .two p {
+      padding-right: 2rem;
+      width: 90%;
+    }
+    .one {
+      width: 55%;
+    }
+    .two {
+      width: 45%;
     }
   }
 `;

@@ -56,6 +56,7 @@ export const SectionHeadStyles = styled.div`
   }
 `;
 
+
 export const SmallTextStyles = styled.p`
   color: #fff;
   font-family: Montserrat;
@@ -63,7 +64,26 @@ export const SmallTextStyles = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 1.71875rem; /* 196.429% */
+
+  strong{
+    color: #FF26B9;
+  }
   @media (max-width: 500px){
     font-size: 0.8125rem;
+  }
+`;
+export const SmallerTextStyles = styled.p`
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2rem; /* 196.429% */
+
+  strong{
+    color: #FF26B9;
+  }
+  @media (max-width: 500px){
+    font-size: 0.6125rem;
   }
 `;

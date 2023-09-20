@@ -78,6 +78,50 @@ export const FancyRule = () => {
           strokeWidth="3"
         />
       </svg>
-      </FancyRuleStyles>
+    </FancyRuleStyles>
+  );
+};
+
+export const PurpleCircle = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="134"
+      height="134"
+      viewBox="0 0 134 134"
+      fill="none"
+    >
+      <circle cx="67" cy="67" r="67" fill="url(#paint0_linear_70_6)" />
+      <defs>
+        <linearGradient
+          id="paint0_linear_70_6"
+          x1="134"
+          y1="67"
+          x2="3.69183"
+          y2="67"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#8F01FE" />
+          <stop offset="1" stopColor="#FF2674" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
+export const PlusSign = () => {
+  return (
+    <svg
+      width="11"
+      height="10"
+      viewBox="0 0 11 10"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.78 10V6.2H0.96V4.32H4.78V0.559999H6.58V4.32H10.4V6.2H6.58V10H4.78Z"
+        fill="#D434FE"
+      />
+    </svg>
   );
 };
