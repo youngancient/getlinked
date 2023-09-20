@@ -103,7 +103,7 @@ export const Hero = () => {
 
 export const SectionTwo = () => {
   return (
-    <SectionTwoStyles>
+    <SectionTwoStyles id="overview">
       <div className="one">
         <Image
           alt="the big idea"
@@ -202,7 +202,7 @@ export const SectionFour = () => {
 
 export const FAQ = () => {
   return (
-    <SectionFiveStyles>
+    <SectionFiveStyles id="faq">
       <div className="one">
         <Image
           alt="guidelines"

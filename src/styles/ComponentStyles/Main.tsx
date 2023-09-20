@@ -295,8 +295,7 @@ export const SectionTwoStyles = styled.div`
 `;
 
 export const SectionThreeStyles = styled(SectionTwoStyles)`
-  filter: drop-shadow(0 0 10px #903aff);
-
+  // background: conic-gradient( from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg );
   .circle {
     position: absolute;
     top: 15%;
@@ -381,7 +380,7 @@ export const SectionFourStyles = styled(SectionTwoStyles)`
     }
   }
   @media (min-width: 998px) {
-    padding: 6rem 0rem;
+    padding: 8rem 0rem;
     padding-left: 4rem;
     .one img {
       width: 710px;
@@ -405,6 +404,7 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
   }
   @media (min-width: 998px) {
     flex-direction: row-reverse;
+    padding: 8rem 0rem;
     padding-left: 11.5rem;
     .one img {
       width: 741px;

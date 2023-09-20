@@ -8,7 +8,7 @@ interface ILink {
 
 export const Links : ILink[] = [
     {name : "Timeline", href : "#" , id : 0, isSelected : true},
-    {name : "Overview", href : "#" , id : 1, isSelected : false},
-    {name : "FAQs", href : "#" , id : 2, isSelected : false},
-    {name : "Contact", href : "#" , id : 3, isSelected : false},
+    {name : "Overview", href : "#overview" , id : 1, isSelected : false},
+    {name : "FAQs", href : "#faq" , id : 2, isSelected : false},
+    {name : "Contact", href : "/contact" , id : 3, isSelected : false},
 ]

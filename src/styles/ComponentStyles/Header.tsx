@@ -12,6 +12,9 @@ export const HeaderStyles = styled.header`
     }
     padding: 2.12rem 3rem;
     padding-bottom: 1.81rem;
+    .mobile-menu svg{
+      cursor: pointer;
+    }
   }
   @media (max-width: 500px) {
     padding: 1.8rem;
@@ -62,11 +65,10 @@ export const ForX = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;
 export const MobileSlideIn = styled.div`
-  border: 2px solid #fff;
-//   background: rgba(21, 14, 40, 0.93);
-    background: rgba(255, 255, 255, 0.01);
+  background: rgba(21, 14, 40, 0.93);
   height: 100vh;
   position: fixed;
   z-index: 20;
@@ -78,7 +80,6 @@ export const MobileSlideIn = styled.div`
     border: 0.5px solid rgba(255, 255, 255, 0.04);
     background: #150e28;
     padding: 2.12rem;
-    border: 2px solid #fff;
     .mobile-links, .second{
         display: flex;
         flex-direction: column;
