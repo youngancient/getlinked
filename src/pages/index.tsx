@@ -1,4 +1,4 @@
-import { FAQ, Hero, SectionFour, SectionThree, SectionTwo } from '@/components/Main/Main';
+import { FAQ, Hero, SectionFour, SectionThree, SectionTwo, TimeLine } from '@/components/Main/Main';
 import Head from 'next/head'
 
 const Home = () => {
@@ -16,6 +16,7 @@ const Home = () => {
         <SectionThree />
         <SectionFour />
         <FAQ />
+        <TimeLine />
       </main>
     </>
    );

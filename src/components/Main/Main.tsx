@@ -1,9 +1,11 @@
 import {
+  CenterMobile,
   HeroStyles,
   SectionFiveStyles,
   SectionFourStyles,
   SectionThreeStyles,
   SectionTwoStyles,
+  TimeLineStyles,
 } from "@/styles/ComponentStyles/Main";
 import { FancyRule, PurpleCircle } from "../Icons/Icons";
 import Image from "next/image";
@@ -20,13 +22,12 @@ import { Accordion } from "./Accordion";
 export const Hero = () => {
   return (
     <HeroStyles>
-      <p className="intro">
-        Igniting a Revolution in{" "}
-        <strong>
-          <span>HR Innovation</span>
+      <div className="intro">
+        <p>Igniting a Revolution in HR Innovation</p>
+        <div className="rule">
           <FancyRule />
-        </strong>
-      </p>
+        </div>
+      </div>
       <div className="hero-main">
         <div className="one">
           <div className="banner">
@@ -121,18 +122,24 @@ export const SectionTwo = () => {
         />
       </div>
       <div className="two">
-        <SectionHead
-          textOne="Introduction to getlinked"
-          textTwo="tech Hackathon 1.0"
-        />
-        <SmallTextStyles>
-          Our tech hackathon is a melting pot of visionaries, and its purpose is
-          as clear as day: to shape the future. Whether you&rsquo;re a coding
-          genius, a design maverick, or a concept wizard, you&rsquo;ll have the
-          chance to transform your ideas into reality. Solving real-world
-          problems, pushing the boundaries of technology, and creating solutions
-          that can change the world, that&rsquo;s what we&rsquo;re all about!
-        </SmallTextStyles>
+        <CenterMobile>
+          <SectionHead
+            textOne="Introduction to getlinked"
+            textTwo="tech Hackathon 1.0"
+          />
+        </CenterMobile>
+
+        <CenterMobile>
+          <SmallTextStyles>
+            Our tech hackathon is a melting pot of visionaries, and its purpose
+            is as clear as day: to shape the future. Whether you&rsquo;re a
+            coding genius, a design maverick, or a concept wizard, you&rsquo;ll
+            have the chance to transform your ideas into reality. Solving
+            real-world problems, pushing the boundaries of technology, and
+            creating solutions that can change the world, that&rsquo;s what
+            we&rsquo;re all about!
+          </SmallTextStyles>
+        </CenterMobile>
       </div>
     </SectionTwoStyles>
   );
@@ -154,15 +161,20 @@ export const SectionThree = () => {
         />
       </div>
       <div className="two">
-        <SectionHead textOne="Rules and" textTwo="Guidelines" />
-        <SmallTextStyles>
-          Our tech hackathon is a melting pot of visionaries, and its purpose is
-          as clear as day: to shape the future. Whether you&rsquo;re a coding
-          genius, a design maverick, or a concept wizard, you&rsquo;ll have the
-          chance to transform your ideas into reality. Solving real-world
-          problems, pushing the boundaries of technology, and creating solutions
-          that can change the world, that&rsquo;s what we&rsquo;re all about!
-        </SmallTextStyles>
+        <CenterMobile>
+          <SectionHead textOne="Rules and" textTwo="Guidelines" />
+        </CenterMobile>
+        <CenterMobile>
+          <SmallTextStyles>
+            Our tech hackathon is a melting pot of visionaries, and its purpose
+            is as clear as day: to shape the future. Whether you&rsquo;re a
+            coding genius, a design maverick, or a concept wizard, you&rsquo;ll
+            have the chance to transform your ideas into reality. Solving
+            real-world problems, pushing the boundaries of technology, and
+            creating solutions that can change the world, that&rsquo;s what
+            we&rsquo;re all about!
+          </SmallTextStyles>
+        </CenterMobile>
       </div>
     </SectionThreeStyles>
   );
@@ -184,12 +196,16 @@ export const SectionFour = () => {
         />
       </div>
       <div className="two">
-        <SectionHead textOne="Judging Criteria" textTwo="Key attributes" />
+        <CenterMobile>
+          <SectionHead textOne="Judging Criteria" textTwo="Key attributes" />
+        </CenterMobile>
         <div className="list">
           {JudgingCriteria.map((ele, index) => (
-            <SmallTextStyles key={index}>
-              <strong>{ele.head}:</strong> {ele.body}
-            </SmallTextStyles>
+            <CenterMobile key={index}>
+              <SmallTextStyles>
+                <strong>{ele.head}:</strong> {ele.body}
+              </SmallTextStyles>
+            </CenterMobile>
           ))}
         </div>
         <div className="btn">
@@ -210,18 +226,62 @@ export const FAQ = () => {
           width={0}
           height={0}
           sizes="100vw"
+          className="guideln"
         />
+        <div className="q-icons">
+          <Image
+            alt="question mark"
+            src="/assets/q2.svg"
+            width={114}
+            height={71}
+            className="q2"
+          />
+          <Image
+            alt="question mark"
+            src="/assets/q1.svg"
+            width={114}
+            height={71}
+            className="q1"
+          />
+
+          <Image
+            alt="question mark"
+            src="/assets/q2.svg"
+            width={114}
+            height={71}
+            className="q2"
+          />
+        </div>
       </div>
       <div className="two">
-        <SectionHead textOne="Frequently Asked" textTwo="Questions" />
-        <SmallTextStyles>
-          We got answers to the questions that you might want to ask about
-          getlinked Hackathon 1.0
-        </SmallTextStyles>
+        <CenterMobile>
+          <SectionHead textOne="Frequently Asked" textTwo="Questions" />
+        </CenterMobile>
+        <CenterMobile>
+          <SmallTextStyles>
+            We got answers to the questions that you might want to ask about
+            getlinked Hackathon 1.0
+          </SmallTextStyles>
+        </CenterMobile>
         <div className="accordion">
           <Accordion />
         </div>
       </div>
     </SectionFiveStyles>
+  );
+};
+
+export const TimeLine = () => {
+  return (
+    <TimeLineStyles>
+      <div className="one">
+        <h3>Timeline</h3>
+        <SmallTextStyles>
+          Here is the breakdown of the time we anticipate using for the upcoming
+          event.
+        </SmallTextStyles>
+      </div>
+      <div className="two"></div>
+    </TimeLineStyles>
   );
 };

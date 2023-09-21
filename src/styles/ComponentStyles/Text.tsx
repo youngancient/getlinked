@@ -79,7 +79,7 @@ export const SmallerTextStyles = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 1.2rem; /* 196.429% */
-
+  
   strong{
     color: #FF26B9;
   }

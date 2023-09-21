@@ -17,18 +17,13 @@ export const Accordion = () => {
 //   I am coming back to this logic
   const handleShowFaq =(id : number)=>{
     setId(id);
-    const newFaqs = faqs.map((ele )=> {
-        if(faqId){
-            if(faqId === ele.id){
-                setId(undefined);
-                return {...ele, show : false} 
-            }else{
-                return {...ele, show : ele.id === id} 
-            }
-        }else{
-            return {...ele, show : ele.id === id}
-        }
-    })     
+    const newFaqs = faqs.map((ele,index )=> {
+      if (id === index) {
+        return { ...ele, show: !ele.show };
+      } else {
+        return { ...ele , show : false};
+      }
+    });
     setFaqs(newFaqs);
   }
   return (
@@ -60,12 +55,12 @@ export const AccordionComponent: FunctionComponent<IAccordionComponentFunc> = ({
   return (
     <AccordionComponentStyles $isShown={show}>
       <div className="question" onClick={showFaq}>
-        <SmallTextStyles>{question}</SmallTextStyles>
+        <span>{question}</span>
         <PlusSign />
       </div>
       {show && (
         <div className="answer">
-          <SmallerTextStyles>{answer}</SmallerTextStyles>
+          <span>{answer}</span>
         </div>
       )}
       <hr />

@@ -15,13 +15,15 @@ import { useState } from "react";
 
 export const Header = () => {
   const [links, setLinks] = useState(Links);
+  const [showMobileNav, setShowMobileNav] = useState(false);
   const selectLink = (id: number) => {
     const newLinks = links.map((ele) => {
       return { ...ele, isSelected: ele.id === id };
     });
     setLinks(newLinks);
+    // ask a user/ designer
+    // setShowMobileNav(false);
   };
-  const [showMobileNav, setShowMobileNav] = useState(false);
   return (
     <HeaderStyles>
       <div className="logo">
@@ -70,6 +72,8 @@ export const Header = () => {
               </div>
               <MediumBtnStyle>Register</MediumBtnStyle>
             </div>
+          </div>
+          <div className="nothing" onClick={() => setShowMobileNav(false)}>    
           </div>
         </MobileSlideIn>
       )}

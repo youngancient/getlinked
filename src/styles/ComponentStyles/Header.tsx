@@ -72,6 +72,8 @@ export const MobileSlideIn = styled.div`
   height: 100vh;
   position: fixed;
   z-index: 20;
+  display: flex;
+  flex-direction: column;
   left: 0;
   top: 0;
   width: 100vw;
@@ -94,6 +96,9 @@ export const MobileSlideIn = styled.div`
         display: flex;
         justify-content: right;
     }
+  }
+  .nothing{
+    flex-grow: 1;
   }
   @media (min-width: 767px){
     display: none;
