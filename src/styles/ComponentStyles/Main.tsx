@@ -3,23 +3,25 @@ import styled from "styled-components";
 export const HeroStyles = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   .intro {
-    color: #fff;
-    font-family: Montserrat;
-    font-size: 2.25rem;
-    font-style: italic;
-    font-weight: 700;
-    line-height: normal;
-    display: flex;
-    justify-content: right;
-    strong {
-      position: relative;
-      margin-left: 0.25rem;
+    p {
+      color: #fff;
+      font-family: Montserrat;
+      font-size: 2.25rem;
+      font-style: italic;
+      font-weight: 700;
+      line-height: normal;
+      text-align: right;
+    }
+    .rule {
+      display: flex;
+      justify-content: flex-end;
     }
     svg {
-      position: absolute;
-      top: 100%;
-      left: 0;
+      width: 15.8125rem;
     }
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
   h1 {
     color: #fff;
@@ -104,11 +106,13 @@ export const HeroStyles = styled.div`
       font-size: 3rem;
     }
     .intro {
-      font-size: 1.65rem;
+      p {
+        font-size: 1.5rem;
+      }
       padding: 2.12rem 3rem;
+      padding-bottom: 0;
       svg {
-        scale: 0.9;
-        left: -1rem;
+        width: 10.1875rem;
       }
     }
     .btm-text {
@@ -143,15 +147,29 @@ export const HeroStyles = styled.div`
       margin-top: 2rem;
     }
   }
+  @media (max-width: 640px) {
+    .intro {
+      p {
+        font-size: 1.2rem;
+      }
+      padding: 2.12rem 3rem;
+      svg {
+        width: 9.1875rem;
+      }
+    }
+  }
   @media (max-width: 500px) {
     h1 {
       font-size: 2rem;
     }
     .intro {
-      font-size: 1rem;
+      p {
+        font-size: 1rem;
+      }
       padding: 1.2rem;
+      padding-bottom: 0;
       svg {
-        left: 0rem;
+        width: 7.1875rem;
       }
     }
     .btm-text {
@@ -192,6 +210,9 @@ export const HeroStyles = styled.div`
     .intro {
       margin-top: 3rem;
       padding-right: 4rem;
+      svg {
+        width: 16.8125rem;
+      }
     }
     h1 {
       font-size: 5rem;
@@ -245,9 +266,8 @@ export const SectionTwoStyles = styled.div`
     scale: 0.15;
   }
   @media (max-width: 998px) {
-    padding: 3rem 0rem;
+    padding: 6rem 0rem;
     flex-direction: column;
-    text-align: center;
     gap: 3rem;
     .two {
       align-items: center;
@@ -263,6 +283,7 @@ export const SectionTwoStyles = styled.div`
     }
   }
   @media (max-width: 500px) {
+    padding: 4rem 0rem;
     .one img {
       width: 264.004px;
     }
@@ -294,6 +315,11 @@ export const SectionTwoStyles = styled.div`
   }
 `;
 
+export const CenterMobile = styled.div`
+  @media (max-width: 998px) {
+    text-align: center;
+  }
+`;
 export const SectionThreeStyles = styled(SectionTwoStyles)`
   // background: conic-gradient( from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg );
   .circle {
@@ -393,20 +419,48 @@ export const SectionFourStyles = styled(SectionTwoStyles)`
 `;
 
 export const SectionFiveStyles = styled(SectionTwoStyles)`
+  .q-icons {
+    position: absolute;
+    top: -15%;
+    left: 5%;
+    display: flex;
+    gap: 2rem;
+  }
+  .one {
+    position: relative;
+  }
   @media (max-width: 998px) {
-    gap: 1.5rem;
+    gap: 6rem;
+    flex-direction: column-reverse;
+    .q-icons img {
+      width: 50px;
+      height: 100%;
+      scale: 0.5;
+    }
+    .q-icons {
+      top: -5%;
+      left: 15%;
+    }
+    .q-icons .q1 {
+      scale: 0.75;
+      transform: translateY(-50%);
+    }
   }
   @media (max-width: 500px) {
-    .one img {
+    .one .guideln {
       width: 327px;
       height: 100%;
+    }
+    .q-icons {
+      top: -18%;
+      left: 15%;
     }
   }
   @media (min-width: 998px) {
     flex-direction: row-reverse;
     padding: 8rem 0rem;
     padding-left: 11.5rem;
-    .one img {
+    .one .guideln {
       width: 741px;
       height: 100%;
     }
@@ -420,5 +474,60 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
     .two {
       width: 45%;
     }
+    .q-icons img {
+      width: 114px;
+      height: 100%;
+      scale: 0.45;
+    }
+    .q-icons .q1 {
+      scale: 0.6;
+      transform: translateY(-50%);
+    }
+  }
+`;
+
+export const TimeLineStyles = styled.div`
+  border: 2px solid #fff;
+  .one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    p{
+      width: 30%;
+      text-align: center;
+    }
+  }
+  .one h3 {
+    color: #fff;
+    font-family: Clash Display;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0%; /* 0rem */
+  }
+
+  @media (max-width: 998px) {
+    padding: 6rem 0rem;
+    .one p{
+      width: 60%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    padding: 4rem 0rem;
+    .one{
+      gap: 1.5rem;
+    }
+    .one h3 {
+      font-size: 1.25rem;
+    }
+    .one p{
+      width: 80%;
+    }
+  }
+  @media (min-width: 998px) {
+    padding: 8rem 0rem;
   }
 `;
