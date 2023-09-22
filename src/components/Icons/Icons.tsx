@@ -1,4 +1,4 @@
-import { LogoStyles, FancyRuleStyles } from "@/styles/ComponentStyles/Icons";
+import { LogoStyles, FancyRuleStyles, CircleNumStyle} from "@/styles/ComponentStyles/Icons";
 import { FunctionComponent } from "react";
 
 export const Logo = () => {
@@ -125,3 +125,14 @@ export const PlusSign = () => {
     </svg>
   );
 };
+
+interface INum{
+  num : number;
+}
+export const CircleNum:FunctionComponent<INum> =({num})=>{
+  return(
+    <CircleNumStyle>
+      <span>{num}</span>
+    </CircleNumStyle>
+  )
+}

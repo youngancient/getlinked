@@ -22,7 +22,7 @@ export const Header = () => {
     });
     setLinks(newLinks);
     // ask a user/ designer
-    // setShowMobileNav(false);
+    setShowMobileNav(false);
   };
   return (
     <HeaderStyles>

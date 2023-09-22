@@ -1,10 +1,12 @@
 import {
   CenterMobile,
   HeroStyles,
+  PrizesStyle,
   SectionFiveStyles,
   SectionFourStyles,
   SectionThreeStyles,
   SectionTwoStyles,
+  SponsorsStyle,
   TimeLineStyles,
 } from "@/styles/ComponentStyles/Main";
 import { FancyRule, PurpleCircle } from "../Icons/Icons";
@@ -18,6 +20,8 @@ import { SectionHead } from "./Text";
 import { SmallTextStyles } from "@/styles/ComponentStyles/Text";
 import { JudgingCriteria } from "../../../constants/criteria";
 import { Accordion } from "./Accordion";
+import { MobileTimeLineComp, TimeLineComp } from "./Timeline";
+import { Medals } from "../../../constants/medal";
 
 export const Hero = () => {
   return (
@@ -281,7 +285,60 @@ export const TimeLine = () => {
           event.
         </SmallTextStyles>
       </div>
-      <div className="two"></div>
+      <div className="two">
+        <TimeLineComp />
+        <MobileTimeLineComp />
+      </div>
     </TimeLineStyles>
   );
+};
+
+export const Prizes = () => {
+  return (
+    <PrizesStyle>
+      <div className="one">
+        <div className="text">
+          <CenterMobile>
+            <SectionHead textOne="Prizes and" textTwo="Rewards" />
+          </CenterMobile>
+          <CenterMobile>
+            <SmallTextStyles>
+              Highlight of the prizes or rewards for winners and for participants.
+            </SmallTextStyles>
+          </CenterMobile>
+        </div>
+      </div>
+      <div className="two">
+        <div className="cup-img desktop">
+          <Image alt="cup" src="/assets/cup.png" width={548} height={482} />
+        </div>
+        <div className="medals">
+          {Medals.map((ele, index) => (
+            <div className="medal" key={index}>
+              <div className={`img i-${ele.id}`}>
+                <Image
+                  alt="medal"
+                  className={`m-${ele.id}`}
+                  src={ele.medalImg}
+                  width={179}
+                  height={180}
+                />
+              </div>
+              <div className="x">
+                <div className="pos">
+                  <strong>{ele.id}</strong>
+                  <SmallTextStyles>Runner</SmallTextStyles>
+                </div>
+                <h4>N{ele.prize}</h4>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </PrizesStyle>
+  );
+};
+
+export const Sponsors = () => {
+  return <SponsorsStyle>Sponsors section</SponsorsStyle>;
 };

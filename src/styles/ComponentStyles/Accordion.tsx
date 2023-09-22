@@ -41,10 +41,10 @@ export const AccordionComponentStyles = styled.div<IAccordionComponentStyle>`
       font-weight: 600;
     }
   }
-//   .question svg {
-//     transform: rotate(0deg);
-//     transition: 0.6s;
-//   }
+  .question svg {
+    transform: rotate(0deg);
+    transition: 0.6s;
+  }
   ${(props) =>
     props.$isShown &&
     css`

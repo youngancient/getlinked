@@ -487,14 +487,16 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
 `;
 
 export const TimeLineStyles = styled.div`
-  border: 2px solid #fff;
+  .two {
+    margin-top: 12rem;
+  }
   .one {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    p{
+    p {
       width: 30%;
       text-align: center;
     }
@@ -510,24 +512,219 @@ export const TimeLineStyles = styled.div`
 
   @media (max-width: 998px) {
     padding: 6rem 0rem;
-    .one p{
+    .one p {
       width: 60%;
+    }
+    .two {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
   @media (max-width: 500px) {
     padding: 4rem 0rem;
-    .one{
+    .one {
       gap: 1.5rem;
     }
     .one h3 {
       font-size: 1.25rem;
     }
-    .one p{
+    .one p {
       width: 80%;
     }
   }
   @media (min-width: 998px) {
     padding: 8rem 0rem;
   }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+`;
+
+export const PrizesStyle = styled.div`
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  .medals {
+    display: flex;
+    gap: 1.5rem;
+  }
+  display: flex;
+  flex-direction: column;
+  .two {
+    display: flex;
+    align-items: flex-start;
+  }
+  .m-1st {
+    width: 296px;
+    height: 100%;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .img {
+    margin-top: -70%;
+  }
+  .i-1st {
+    margin-top: -100%;
+  }
+  .medal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 212px;
+    height: 296px;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    border: 1px solid #d434fe;
+    background: rgba(212, 52, 254, 0.12);
+  }
+  .pos strong {
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .x {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .x h4 {
+    color: #d434fe;
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .medal:nth-of-type(2) {
+    height: 320px;
+    border: 1px solid #903aff;
+    background: rgba(144, 58, 255, 0.12);
+    h4 {
+      margin-top: 1rem;
+    }
+  }
+  .one{
+  }
+  .text{
+    width: fit-content;
+  }
+  @media (max-width: 998px) {
+    padding: 4rem;
+    .img img {
+      width: 120px;
+      height: 100%;
+    }
+    .img .m-1st {
+      width: 180px;
+      height: 100%;
+    }
+    .medal {
+      width: 150px;
+      height: 200px;
+      gap: 0.75rem;
+    }
+    .medal:nth-of-type(2) {
+      height: 220px;
+      h4 {
+        margin-top: 0.75rem;
+      }
+    }
+    .text {
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .pos strong {
+      font-size: 1.5rem;
+    }
+    .x h4 {
+      font-size: 1.2rem;
+    }
+    .medal {
+      gap: 1rem;
+    }
+    gap: 5rem;
+    .two {
+      flex-direction: column;
+      align-items: center;
+      gap: 10rem;
+    }
+    .cup-img img {
+      width: 321px;
+      height: 282px;
+      flex-shrink: 0;
+    }
+  }
+  @media (max-width: 500px) {
+    padding: 2rem;
+    .medals {
+      gap: 0.75rem;
+    }
+    .img img {
+      width: 75.997px;
+      height: 100%;
+    }
+    .img .m-1st {
+      width: 125.671px;
+      height: 100%;
+    }
+    .text {
+      gap: 1.5rem;
+    }
+    .medal {
+      width: 90.007px;
+      height: 125.671px;
+      gap: 0.5rem;
+    }
+    .medal:nth-of-type(2) {
+      height: 150px;
+      h4 {
+        margin-top: 0.25rem;
+      }
+    }
+    .pos strong {
+      font-size: 0.75rem;
+    }
+    .x h4 {
+      font-size: 0.875rem;
+    }
+    gap: 2.5rem;
+    .two {
+      gap: 7rem;
+    }
+  }
+  @media (min-width: 998px) {
+    padding: 8rem 4rem;
+    .medals{
+      align-self: flex-end;
+    }
+    .one{
+      display: flex;
+      justify-content: flex-end;
+      align-items :center;
+    }
+    gap: 8rem;
+    .cup-img img {
+      width: 500px;
+      height: 100%;
+      flex-shrink: 0;
+    }
+    .two{
+      gap: 1.5rem;
+    }
+    .text p{
+      width: 80%;
+    }
+  }
+`;
+
+export const SponsorsStyle = styled.div`
+  border: 2px solid #fff;
 `;
