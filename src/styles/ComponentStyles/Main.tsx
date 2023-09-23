@@ -198,12 +198,23 @@ export const HeroStyles = styled.div`
     }
     // coming back here to fix this
     .added {
-      position: absolute;
+      position: relative;
       right: 0rem;
       left: 0%;
       top: 0;
+      scale: 1.5;
       align-items: center;
       display: flex;
+      margin-left: 0.75rem;
+      .chain{
+        position: absolute;
+        left: -50%;
+      }
+    }
+  }
+  @media (max-width: 365px) {
+    .intro p{
+      font-size: 0.8rem;
     }
   }
   @media (min-width: 998px) {
@@ -429,6 +440,9 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
   .one {
     position: relative;
   }
+  .guideln img{
+    width: 100%;
+  }
   @media (max-width: 998px) {
     gap: 6rem;
     flex-direction: column-reverse;
@@ -487,14 +501,16 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
 `;
 
 export const TimeLineStyles = styled.div`
-  border: 2px solid #fff;
+  .two {
+    margin-top: 12rem;
+  }
   .one {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    p{
+    p {
       width: 30%;
       text-align: center;
     }
@@ -507,27 +523,529 @@ export const TimeLineStyles = styled.div`
     font-weight: 700;
     line-height: 0%; /* 0rem */
   }
-
+  background: #150E28;
   @media (max-width: 998px) {
     padding: 6rem 0rem;
-    .one p{
+    .one p {
       width: 60%;
+    }
+    .two {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
   @media (max-width: 500px) {
     padding: 4rem 0rem;
-    .one{
+    .one {
       gap: 1.5rem;
     }
     .one h3 {
       font-size: 1.25rem;
     }
-    .one p{
+    .one p {
       width: 80%;
     }
   }
   @media (min-width: 998px) {
     padding: 8rem 0rem;
+  }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+`;
+
+export const PrizesStyle = styled.div`
+  .medals {
+    display: flex;
+    gap: 1.5rem;
+  }
+  display: flex;
+  flex-direction: column;
+  background: #150E28;
+  .two {
+    display: flex;
+    align-items: flex-start;
+  }
+  .m-1st {
+    width: 296px;
+    height: 100%;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .img {
+    margin-top: -70%;
+  }
+  .i-1st {
+    margin-top: -100%;
+  }
+  .medal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 212px;
+    height: 296px;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    border: 1px solid #d434fe;
+    background: rgba(212, 52, 254, 0.12);
+  }
+  .pos strong {
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .x {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .x h4 {
+    color: #d434fe;
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .medal:nth-of-type(2) {
+    height: 320px;
+    border: 1px solid #903aff;
+    background: rgba(144, 58, 255, 0.12);
+    h4 {
+      margin-top: 1rem;
+    }
+  }
+  .one {
+  }
+  .text {
+    width: fit-content;
+  }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  @media (max-width: 998px) {
+    padding: 4rem;
+    .img img {
+      width: 120px;
+      height: 100%;
+    }
+    .img .m-1st {
+      width: 180px;
+      height: 100%;
+    }
+    .medal {
+      width: 150px;
+      height: 200px;
+      gap: 0.75rem;
+    }
+    .medal:nth-of-type(2) {
+      height: 220px;
+      h4 {
+        margin-top: 0.75rem;
+      }
+    }
+    .text {
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .text p {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pos strong {
+      font-size: 1.5rem;
+    }
+    .x h4 {
+      font-size: 1.2rem;
+    }
+    .medal {
+      gap: 1rem;
+    }
+    gap: 5rem;
+    .two {
+      flex-direction: column;
+      align-items: center;
+      gap: 10rem;
+    }
+    .cup-img img {
+      width: 321px;
+      height: 282px;
+      flex-shrink: 0;
+    }
+  }
+  @media (max-width: 500px) {
+    padding: 4rem 2rem;
+    .medals {
+      gap: 0.75rem;
+    }
+    .img img {
+      width: 75.997px;
+      height: 100%;
+    }
+    .img .m-1st {
+      width: 125.671px;
+      height: 100%;
+    }
+    .text {
+      gap: 1.5rem;
+    }
+    .text p {
+      // width: 90%;
+    }
+    .medal {
+      width: 90.007px;
+      height: 125.671px;
+      gap: 0.5rem;
+    }
+    .medal:nth-of-type(2) {
+      height: 150px;
+      h4 {
+        margin-top: 0.25rem;
+      }
+    }
+    .pos strong {
+      font-size: 0.75rem;
+    }
+    .x h4 {
+      font-size: 0.875rem;
+    }
+    gap: 2.5rem;
+    .two {
+      gap: 7rem;
+    }
+  }
+  @media (min-width: 998px) {
+    padding: 8rem 4rem;
+    .text p {
+      width: 30%;
+    }
+    .medals {
+      align-self: flex-end;
+    }
+    .one {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    gap: 8rem;
+    .cup-img img {
+      width: 500px;
+      height: 100%;
+      flex-shrink: 0;
+    }
+    .two {
+      gap: 1.5rem;
+    }
+    .text p {
+      width: 80%;
+    }
+  }
+`;
+
+export const SponsorsStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  .one h3 {
+    color: #fff;
+    font-family: Clash Display;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0%; /* 0rem */
+  }
+  .one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .one p {
+    text-align: center;
+  }
+  .two {
+    border-radius: 0.3125rem;
+    border: 1px solid #d434fe;
+    background: rgba(255, 255, 255, 0.01);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 4rem;
+  }
+  .sponsor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .sponsor:nth-of-type(4) {
+    padding: 1rem;
+  }
+  .line {
+    position: absolute;
+    right: -2.5%;
+  }
+  .horizontal-line {
+    position: absolute;
+    bottom: -5%;
+  }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  @media (max-width: 998px) {
+    padding: 4rem;
+    .one p {
+      width: 90%;
+    }
+    .spons1 {
+      width: 100.562px;
+      height: 113.946px;
+    }
+    .spons2 {
+      width: 180.189px;
+      height: 30.432px;
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+    .spons3 {
+      width: 131.589px;
+      height: 107.33px;
+    }
+    .spons4 {
+      width: 137.027px;
+      height: 99.535px;
+      flex-shrink: 0;
+    }
+    .spons5 {
+      width: 160.368px;
+      height: 40.584px;
+      flex-shrink: 0;
+    }
+    .grid {
+      padding: 2rem 0rem;
+    }
+    .spons6 {
+      width: 150px;
+      height: 25px;
+      flex-shrink: 0;
+    }
+    .line {
+      height: 5.86525rem;
+    }
+    .horizontal-line {
+      width: 8.26694rem;
+    }
+  }
+  @media (max-width: 500px) {
+    padding: 4rem 2rem;
+    .one h3 {
+      font-size: 1.25rem;
+    }
+    .one p {
+      width: 100%;
+    }
+    .one {
+      gap: 1.5rem;
+    }
+    .spons1 {
+      width: 31.99px;
+      height: 30.234px;
+    }
+    .spons2 {
+      width: 56.567px;
+      height: 10.728px;
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+    .spons3 {
+      width: 34.916px;
+      height: 28.479px;
+    }
+    .spons4 {
+      width: 39.012px;
+      height: 29.064px;
+      flex-shrink: 0;
+    }
+    .spons5 {
+      width: 54.227px;
+      height: 12.462px;
+      flex-shrink: 0;
+    }
+    .spons6 {
+      width: 69px;
+      height: 12.46px;
+      flex-shrink: 0;
+    }
+    .sponsor {
+      width: 100%;
+      height: 60px;
+    }
+    .line {
+      height: 1.86525rem;
+    }
+    .horizontal-line {
+      width: 4.26694rem;
+    }
+  }
+  @media (min-width: 998px) {
+    padding: 8rem 4rem;
+    .one p {
+      width: 50%;
+    }
+  }
+`;
+
+export const PrivacyStyles = styled.div`
+  display: flex;
+  .policies {
+    border-radius: 0.3125rem;
+    background: rgba(217, 217, 217, 0.03);
+  }
+  .check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    svg {
+      margin-top: 6px;
+      width: 1.0625rem;
+      height: 1.0625rem;
+      flex-shrink: 0;
+    }
+  }
+  background: #150E28;
+  h5 {
+    color: #d434fe;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 216.4%; /* 2.164rem */
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .head-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .first {
+    gap: 1rem;
+  }
+  .policy-text,
+  .f2 {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+  .two {
+    position: relative;
+  }
+  .crypt {
+    position: absolute;
+    top: -25%;
+    left: 10%;
+  }
+  .secured {
+    position: relative;
+    z-index: 5;
+  }
+  @media (max-width: 998px) {
+    flex-direction: column;
+    padding: 4rem;
+    .head-text .first {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .policies {
+      margin-top: 2rem;
+      padding: 2.81rem 1rem 2.81rem 1.2rem;
+    }
+    .policy-two {
+      margin-top: 1.5rem;
+    }
+    .crypt {
+      top: 0;
+      left: 28%;
+    }
+    .crypt img {
+      width: 349px;
+      height: 411px;
+    }
+    .two {
+      margin-top: 4rem;
+    }
+  }
+  @media (max-width: 500px) {
+    padding: 4rem 2rem;
+    .policies {
+      margin-top: 2rem;
+      padding: 2.81rem 0.75rem 2.81rem 0.94rem;
+    }
+    h5 {
+      font-size: 0.8125rem;
+    }
+    .policy-two {
+      margin-top: 1.31rem;
+    }
+    .policy-text {
+      gap: 1rem;
+    }
+    .crypt{
+      top: -25%;
+      left: 5%;
+    }
+    .two {
+      margin-top: 10rem;
+    }
+    .secured {
+      width: 262px;
+      height: 351px;
+      flex-shrink: 0;
+    }
+    .crypt img {
+      width: 249px;
+      height: 311px;
+    }
+  }
+  @media (min-width: 998px) {
+    padding: 8rem 4rem;
+    padding-left: 7rem;
+    gap: 2rem;
+    .one,
+    .two {
+      width: 50%;
+    }
+    .policies {
+      margin-top: 4rem;
+      padding: 4rem 2rem 3rem 4rem;
+    }
+    .policy-two {
+      margin-top: 3rem;
+    }
+    .first p {
+      margin-top: 2rem;
+    }
+    .p {
+      width: 75%;
+    }
+    .two {
+      margin-top: 8rem;
+    }
   }
 `;

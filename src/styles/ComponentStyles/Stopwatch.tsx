@@ -1,6 +1,12 @@
 import styled from "styled-components";
+import {motion} from "framer-motion";
+import { FaqVariant } from "@/animations/animations";
 
-export const StopwatchStyles = styled.div`
+export const StopwatchStyles = styled(motion.div).attrs(()=>({
+  initial : "initial",
+  whileInView : "final",
+  variants : FaqVariant
+}))`
   width: fit-content;
   display: flex;
   gap: 1.5rem;

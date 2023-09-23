@@ -1,3 +1,5 @@
+import { textVariant } from "@/animations/animations";
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
 // interface IFont{
@@ -56,22 +58,54 @@ export const SectionHeadStyles = styled.div`
   }
 `;
 
-
-export const SmallTextStyles = styled.p`
+interface ISmallText{
+  color ?: string;
+}
+export const SmallTextStyles = styled(motion.p).attrs<ISmallText>(()=>({
+  initial: "initial",
+  whileInView: "final",
+  variants: textVariant,
+}))`
   color: #fff;
   font-family: Montserrat;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.71875rem; /* 196.429% */
-
+  ${props => props.color && css`
+    color: ${props.color};
+  `}
   strong{
     color: #FF26B9;
+  }
+  b{
+    margin-left: 0.25rem;
   }
   @media (max-width: 500px){
     font-size: 0.8125rem;
   }
 `;
+export const NonAnimatedSmallTextStyles = styled.p<ISmallText>`
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.71875rem; /* 196.429% */
+  ${props => props.color && css`
+    color: ${props.color};
+  `}
+  strong{
+    color: #FF26B9;
+  }
+  b{
+    margin-left: 0.25rem;
+  }
+  @media (max-width: 500px){
+    font-size: 0.8125rem;
+  }
+`;
+
 export const SmallerTextStyles = styled.p`
   color: #fff;
   font-family: Montserrat;
