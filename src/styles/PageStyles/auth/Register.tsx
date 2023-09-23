@@ -1,3 +1,4 @@
+import { Rotate } from "@/animations/keyframes";
 import styled, { css } from "styled-components";
 
 export const RegisterStyles = styled.div`
@@ -94,6 +95,21 @@ export const RegisterStyles = styled.div`
     font-weight: 400;
     line-height: normal;
   }
+  /* Hide the number input buttons for Webkit browsers (Chrome, Safari) */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove the default appearance */
+    appearance: none; /* Remove the default appearance (for Firefox) */
+    margin: 0; /* Remove any default margin */
+  }
+
+  /* Hide the number input buttons for Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield; /* Restore the input to a text input appearance (for Firefox) */
+  }
+  .down {
+    margin-top: 0.5rem;
+  }
   @media (max-width: 998px) {
     // padding: 4rem;
     flex-direction: column;
@@ -167,6 +183,9 @@ export const RegisterStyles = styled.div`
     .form {
       gap: 1rem;
     }
+    .down {
+      margin-top: 0.25rem;
+    }
   }
   @media (min-width: 998px) {
     padding: 8rem 4rem;
@@ -191,8 +210,8 @@ export const RegisterStyles = styled.div`
   }
 `;
 
-interface IDropdownStyles{
-    $isActive : boolean;
+interface IDropdownStyles {
+  $isActive: boolean;
 }
 export const DropdownStyles = styled.div<IDropdownStyles>`
   //   padding: 1rem;
@@ -218,18 +237,115 @@ export const DropdownStyles = styled.div<IDropdownStyles>`
     position: absolute;
     top: 100%;
   }
-  .svg{
-    transition : 0.3s;
+  .svg {
+    transition: 0.3s;
   }
-  ${props => props.$isActive && css`
-    .svg{
+  ${(props) =>
+    props.$isActive &&
+    css`
+      .svg {
         transform: rotate(180deg);
-        transition : 0.6s;
-    }
-  `}
-  @media (max-width: 998px) {
+        transition: 0.6s;
+      }
+    `}
+  @media (max-width: 500px) {
     .display {
       width: fit-content;
+    }
+  }
+`;
+
+export const ButtonLoader = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  border-top: 4px solid transparent;
+  margin: auto;
+  animation: ${Rotate} 0.6s ease infinite;
+`;
+
+export const SuccessStyles = styled.div`
+  background: rgba(21, 14, 40, 0.93);
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .message {
+    border-radius: 0.3125rem;
+    border: 1px solid #d434fe;
+    background: rgba(255, 255, 255, 0.01);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  h3 {
+    color: #fff;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 100%;
+  }
+  .three {
+    width: 100%;
+  }
+  .three button {
+    width: 100%;
+  }
+  .one{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .check{
+      transform: translateX(30%);
+    }
+    .success{
+      transform: translateX(-30%);
+    }
+  }
+
+  .wink {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    justify-content: center;
+  }
+  .p{
+    margin-top: 1rem;
+  }
+  @media (max-width: 900px) {
+    padding: 2rem;
+    .message {
+      padding: 4rem 2rem;
+    }
+  }
+  @media (max-width: 500px) {
+    padding: 2rem;
+    .message {
+      padding: 0rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    .three{
+      padding: 2rem;
+      padding-top: 0rem;
+    }
+  }
+  @media (min-width: 998px) {
+    .message {
+      width: 40%;
+      padding: 2rem 4rem;
     }
   }
 `;

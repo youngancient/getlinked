@@ -2,17 +2,59 @@ import { DottedLine } from "@/components/Icons/Icons";
 import { LargeBtnStyle } from "@/styles/ComponentStyles/Buttons";
 import { CheckBox } from "@/styles/ComponentStyles/Icons";
 import {
+  ErrorStyles,
   SmallTextStyles,
   SmallerTextStyles,
 } from "@/styles/ComponentStyles/Text";
-import { RegisterStyles } from "@/styles/PageStyles/auth/Register";
+import {
+  ButtonLoader,
+  RegisterStyles,
+} from "@/styles/PageStyles/auth/Register";
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { RegisterImgVariants, textVariant } from "@/animations/animations";
-import { Dropdown } from "@/components/Auth/Register";
+import { Dropdown, Success } from "@/components/Auth/Register";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
 
+interface IForm {
+  teamName: string;
+  phone: string;
+  email: string;
+  topic: string;
+}
 const Register = () => {
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IForm>({
+    mode: "onBlur",
+    defaultValues: {
+      teamName: "",
+      phone: "",
+      email: "",
+      topic: "",
+    },
+  });
+  const [isLoading, setLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleRegister = (data: IForm) => {
+    console.log(data);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setIsSuccess(true);
+    }, 2000);
+    reset();
+  };
+
+  const cancel =()=>{
+    setIsSuccess(false);
+  }
   return (
     <>
       <Head>
@@ -22,6 +64,7 @@ const Register = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        {isSuccess && <Success handleClose={cancel} />}
         <RegisterStyles>
           <div className="one">
             <h3>Register</h3>
@@ -62,7 +105,7 @@ const Register = () => {
               </div>
             </div>
             <h4>CREATE YOUR ACCOUNT</h4>
-            <form>
+            <form onSubmit={handleSubmit(handleRegister)}>
               <div className="inner">
                 <motion.div
                   className="form-ele"
@@ -75,10 +118,13 @@ const Register = () => {
                   </label>
                   <input
                     type="text"
-                    name="name"
+                    {...register("teamName", { required: "Name is required" })}
                     id=""
                     placeholder="Enter the name of your group"
                   />
+                  <ErrorStyles className="down">
+                    {errors?.teamName && errors.teamName.message}
+                  </ErrorStyles>
                 </motion.div>
                 <motion.div
                   className="form-ele"
@@ -90,11 +136,14 @@ const Register = () => {
                     <SmallTextStyles>Phone</SmallTextStyles>
                   </label>
                   <input
-                    type="text"
-                    name="phone"
+                    type="number"
+                    {...register("phone", { required: "Phone is required" })}
                     id=""
                     placeholder="Enter your phone number"
                   />
+                  <ErrorStyles className="down">
+                    {errors?.phone && errors.phone.message}
+                  </ErrorStyles>
                 </motion.div>
               </div>
               <div className="inner">
@@ -109,10 +158,13 @@ const Register = () => {
                   </label>
                   <input
                     type="email"
-                    name="email"
+                    {...register("email", { required: "Email is required" })}
                     id=""
                     placeholder="Enter your email address"
                   />
+                  <ErrorStyles className="down">
+                    {errors?.email && errors.email.message}
+                  </ErrorStyles>
                 </motion.div>
                 <motion.div
                   className="form-ele"
@@ -125,10 +177,13 @@ const Register = () => {
                   </label>
                   <input
                     type="text"
-                    name="topic"
+                    {...register("topic", { required: "Topic is required" })}
                     id=""
                     placeholder="What is your group project topic"
                   />
+                  <ErrorStyles className="down">
+                    {errors?.topic && errors.topic.message}
+                  </ErrorStyles>
                 </motion.div>
               </div>
               <div className="inner xx">
@@ -165,7 +220,9 @@ const Register = () => {
                   </SmallTextStyles>
                 </div>
                 <div className="btn">
-                  <LargeBtnStyle>Register Now</LargeBtnStyle>
+                  <LargeBtnStyle>
+                    {isLoading ? <ButtonLoader /> : "Register Now"}
+                  </LargeBtnStyle>
                 </div>
               </div>
             </form>

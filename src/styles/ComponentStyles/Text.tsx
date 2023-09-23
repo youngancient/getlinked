@@ -121,3 +121,11 @@ export const SmallerTextStyles = styled.p`
     font-size: 0.6125rem;
   }
 `;
+
+export const ErrorStyles = styled.p`
+  color: #FF5733;
+  font-family: Montserrat;
+  font-size: 0.6rem;
+  font-style: normal;
+  font-weight: 400;
+`;
