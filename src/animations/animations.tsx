@@ -30,6 +30,19 @@ export const textVariant = {
   },
 };
 
+export const RegisterImgVariants ={
+  initial: {
+    opacity: 0,
+    x: -100,
+  },
+  final: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+}
 export const SlideinAnime = {
   initial: {
     opacity: 0,
