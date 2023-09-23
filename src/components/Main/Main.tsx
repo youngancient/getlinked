@@ -39,8 +39,10 @@ import {
   positionParentVariants,
   textVariant,
 } from "@/animations/animations";
+import { useRouter } from "next/router";
 
 export const Hero = () => {
+  const router = useRouter();
   return (
     <HeroStyles>
       <div className="intro">
@@ -109,7 +111,7 @@ export const Hero = () => {
             whileInView= "final3"
             variants={textVariant}
             >
-              <LargeBtnStyle>Register</LargeBtnStyle>
+              <LargeBtnStyle onClick={() => router.push("/auth/register")}>Register</LargeBtnStyle>
             </motion.div>
           </div>
           <Stopwatch />
@@ -134,8 +136,8 @@ export const Hero = () => {
           }}
           transition={{
             delay : 0.25,
-            duration: 2, // Total duration for 3 rotations
-            ease: "linear", // Linear easing for consistent rotation speed
+            duration: 4, // Total duration for 3 rotations
+            ease: "easeInOut", // Linear easing for consistent rotation speed
           }}
           >
             <Image

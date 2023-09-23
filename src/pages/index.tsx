@@ -1,6 +1,13 @@
 import { FAQ, Hero, PrivacyPolicy, Prizes, SectionFour, SectionThree, SectionTwo, Sponsors, TimeLine } from '@/components/Main/Main';
 import Head from 'next/head'
 
+
+// I have 3 tasks: 
+//1.  Add animation to the Line component
+// 2. Work on the stopwatch
+// 3. Add shadow and stars
+
+
 const Home = () => {
   return ( 
     <>

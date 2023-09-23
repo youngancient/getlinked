@@ -5,7 +5,7 @@ export const Stopwatch =()=>{
     return(
         <StopwatchStyles>
             <div className="digit">
-                <p>00</p>
+                <p>18</p>
                 <span>H</span>
             </div>
             <div className="digit">

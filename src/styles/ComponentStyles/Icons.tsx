@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { LineVariant } from "@/animations/animations";
 
 export const LogoStyles = styled.h3`
@@ -35,11 +35,11 @@ export const FancyRuleStyles = styled.span`
 
 interface ILineStyles {
   height: string;
-  width ?: string;
+  width?: string;
 }
 export const Line = styled.div<ILineStyles>`
-  width: ${props => props.width ? props.width : "0.25rem"};
-  background: #D434FE;
+  width: ${(props) => (props.width ? props.width : "0.25rem")};
+  background: #d434fe;
   height: ${(props) => props.height};
   @media (max-width: 500px) {
     width: 0.125rem;
@@ -50,7 +50,7 @@ interface IHorizontalLineStyles {
 }
 export const HorizontalLine = styled.div<IHorizontalLineStyles>`
   height: 0.25rem;
-  background: #D434FE;
+  background: #d434fe;
   width: ${(props) => props.width};
   @media (max-width: 500px) {
     height: 0.125rem;
@@ -75,7 +75,7 @@ export const CircleNumStyle = styled.div`
   @media (max-width: 998px) {
     width: 1.6rem;
     height: 2.25rem;
-    span{
+    span {
       font-size: 1rem;
     }
   }
@@ -84,8 +84,20 @@ export const CircleNumStyle = styled.div`
     width: 1.3rem;
     height: 1.25rem;
     flex-shrink: 0;
-    span{
+    span {
       font-size: 0.75rem;
     }
   }
 `;
+
+export const CheckBox = styled.div`
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+  border-radius: 0.125rem;
+  border: 1px solid #fff;
+`;
+
+export const ArrowDownStyle = styled.div`
+  border: 2px solid #fff;
+`
