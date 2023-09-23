@@ -593,7 +593,7 @@ export const PrivacyPolicy = () => {
         />
         <div className="crypt">
           <Image
-            src="/assets/vector.png"
+            src="/assets/vector.svg"
             alt="secured"
             width={530}
             height={648}
