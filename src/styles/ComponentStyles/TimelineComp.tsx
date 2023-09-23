@@ -61,7 +61,6 @@ export const TimeLineCompStyles = styled.div`
 `;
 
 export const MobileTimeLineCompStyles = styled.div`
-  // border: 2px solid #fff;
   //   padding: 0rem 4rem ;
   width: 60%;
   .list {

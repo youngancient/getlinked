@@ -6,6 +6,8 @@ import {
 import { CircleNum } from "../Icons/Icons";
 import { SmallTextStyles } from "@/styles/ComponentStyles/Text";
 import { Timelines } from "../../../constants/timeline";
+import {motion} from "framer-motion";
+import { textVariant } from "@/animations/animations";
 
 export const TimeLineComp = () => {
   return (
@@ -22,7 +24,11 @@ export const TimeLineComp = () => {
               <CircleNum num={ele.id} />
             </div>
             <div className="date">
-              <h4>{ele.date}</h4>
+              <motion.h4
+              initial = "initial"
+              whileInView= "final"
+              variants={textVariant}
+              >{ele.date}</motion.h4>
             </div>
           </div>
         ))}

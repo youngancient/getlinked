@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {motion} from "framer-motion";
+import { LineVariant } from "@/animations/animations";
 
 export const LogoStyles = styled.h3`
   width: fit-content;
@@ -8,6 +10,7 @@ export const LogoStyles = styled.h3`
   font-weight: 700;
   color: #fff;
   line-height: normal;
+  cursor: pointer;
   strong {
     color: #d434fe;
   }
@@ -32,13 +35,25 @@ export const FancyRuleStyles = styled.span`
 
 interface ILineStyles {
   height: string;
+  width ?: string;
 }
 export const Line = styled.div<ILineStyles>`
-  width: 0.25rem;
+  width: ${props => props.width ? props.width : "0.25rem"};
   background: #D434FE;
   height: ${(props) => props.height};
   @media (max-width: 500px) {
     width: 0.125rem;
+  }
+`;
+interface IHorizontalLineStyles {
+  width: string;
+}
+export const HorizontalLine = styled.div<IHorizontalLineStyles>`
+  height: 0.25rem;
+  background: #D434FE;
+  width: ${(props) => props.width};
+  @media (max-width: 500px) {
+    height: 0.125rem;
   }
 `;
 export const CircleNumStyle = styled.div`

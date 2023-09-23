@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
+import {motion} from "framer-motion";
+import { FaqVariant, parentVariants } from "@/animations/animations";
 
-export const AccordionStyles = styled.div`
+export const AccordionStyles = styled(motion.div).attrs(()=>({
+  initial: "initial",
+  whileInView: "final",
+  variants: parentVariants,
+}))`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -18,7 +24,11 @@ export const AccordionStyles = styled.div`
 interface IAccordionComponentStyle {
   $isShown: boolean;
 }
-export const AccordionComponentStyles = styled.div<IAccordionComponentStyle>`
+export const AccordionComponentStyles = styled(motion.div).attrs<IAccordionComponentStyle>(()=>({
+  initial: "initial",
+  whileInView: "final",
+  variants: FaqVariant,
+}))`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

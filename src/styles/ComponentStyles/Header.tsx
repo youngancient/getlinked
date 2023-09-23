@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { SlideinAnime } from "@/animations/animations";
 
 export const HeaderStyles = styled.header`
   border-bottom: 2px solid rgba(255, 255, 255, 0.18);
@@ -68,7 +70,7 @@ export const ForX = styled.div`
   cursor: pointer;
 `;
 export const MobileSlideIn = styled.div`
-  background: rgba(21, 14, 40, 0.93);
+  background: rgba(21, 14, 40, 0.53);
   height: 100vh;
   position: fixed;
   z-index: 20;

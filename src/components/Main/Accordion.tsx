@@ -9,6 +9,10 @@ import {
 import { PlusSign } from "../Icons/Icons";
 import { FAQs, IAccordionComponent } from "../../../constants/accordion";
 import { FunctionComponent, useState } from "react";
+import {motion, AnimatePresence} from "framer-motion";
+import { faqAnswerVariants } from "@/animations/animations";
+
+
 
 export const Accordion = () => {
   const [faqs, setFaqs] = useState(FAQs);
@@ -58,11 +62,18 @@ export const AccordionComponent: FunctionComponent<IAccordionComponentFunc> = ({
         <span>{question}</span>
         <PlusSign />
       </div>
+      <AnimatePresence>
       {show && (
-        <div className="answer">
+        <motion.div className="answer"
+        variants={faqAnswerVariants}
+        initial = "initial"
+        animate = "final"
+        exit= "exit"
+        >
           <span>{answer}</span>
-        </div>
+        </motion.div>
       )}
+      </AnimatePresence>
       <hr />
     </AccordionComponentStyles>
   );
