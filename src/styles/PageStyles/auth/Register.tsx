@@ -241,6 +241,7 @@ export const DropdownStyles = styled.div<IDropdownStyles>`
   display: flex;
   justify-content: center;
   position: relative;
+  z-index: 10;
   .display,
   .gs {
     height: 2.9375rem;
@@ -263,6 +264,7 @@ export const DropdownStyles = styled.div<IDropdownStyles>`
     top: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 0.25rem;
     width: 100%;
   }
   .svg {
@@ -337,6 +339,7 @@ export const SuccessStyles = styled(motion.div).attrs(() => ({
   height: 100vh;
   display: flex;
   justify-content: center;
+  z-index: 15;
   align-items: center;
   .message {
     border-radius: 0.3125rem;

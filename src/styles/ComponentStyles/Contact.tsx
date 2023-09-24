@@ -10,7 +10,7 @@ export const ContactSuccessStyles = styled(motion.div).attrs(() => ({
     variants: OverlayVariants,
   }))`
     background: rgba(21, 14, 40, 0.93);
-    z-index: 5;
+    z-index: 10;
     position: fixed;
     top: 0;
     width: 100vw;
