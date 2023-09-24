@@ -138,6 +138,16 @@ const Register = () => {
         <RegisterStyles>
           <div className="one">
             <h3>Register</h3>
+            <div className="absolute-div">
+              <Image
+                alt="purple"
+                src="/assets/purple.png"
+                height={300}
+                width={300}
+                sizes="100vw"
+                className="purple"
+              />
+            </div>
             <motion.div
               className="img"
               initial="initial"

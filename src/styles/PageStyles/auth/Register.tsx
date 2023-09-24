@@ -11,6 +11,8 @@ export const RegisterStyles = styled.div`
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    z-index: 5;
+    position: relative;
   }
 
   display: flex;
@@ -63,6 +65,19 @@ export const RegisterStyles = styled.div`
   .move {
     position: relative;
   }
+  .one .absolute-div {
+    position: absolute;
+    left: 0;
+    top: 0%;
+    img {
+      width: 44.8125rem;
+      height: 44.8125rem;
+      flex-shrink: 0;
+    }
+  }
+  .img {
+    z-index: 5;
+  }
   .move .man,
   .move .woman {
     position: absolute;
@@ -80,10 +95,10 @@ export const RegisterStyles = styled.div`
     font-weight: 400;
     line-height: normal;
   }
-  .h{
+  .h {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
-    p{
+    p {
       margin-top: 0.25rem;
       font-size: 1rem;
     }
@@ -175,9 +190,17 @@ export const RegisterStyles = styled.div`
     .img img {
       width: 195px;
       height: 155px;
+      z-index: 5;
       flex-shrink: 0;
     }
-    .h{
+    .one .absolute-div {
+      img {
+        width: 24.75rem;
+        height: 27.625rem;
+        flex-shrink: 0;
+      }
+    }
+    .h {
       margin-bottom: 1rem;
     }
     h4 {
@@ -307,7 +330,7 @@ export const DropdownItemStyle = styled.p<IDropdownStyles>`
         #903aff 0%,
         #d434fe 56.42%,
         #ff26b9 99.99%,
-        #fe34b9 100%        
+        #fe34b9 100%
       );
       border-bottom: none;
     `}
