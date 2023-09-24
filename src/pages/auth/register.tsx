@@ -54,6 +54,7 @@ const Register = () => {
   const [isLoading, setLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isAgree, setIsAgree] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const [categories, setCategories] = useState<ICategory[] | null>(null);
   const [groupSizes, setGroupSizes] = useState<IGroupSize[]>(GroupSizes);
@@ -80,9 +81,10 @@ const Register = () => {
           setIsSuccess(true);
           reset();
         }
-      } catch (error : any) {
+      } catch (error: any) {
         setLoading(false);
-        console.log(error);
+        const message = error.response && error.response.data.email;
+        setErrorMsg(message[0]);
       }
     }
   };
@@ -173,7 +175,10 @@ const Register = () => {
                 <DottedLine />
               </div>
             </div>
-            <h4>CREATE YOUR ACCOUNT</h4>
+            <div className="h">
+              <h4>CREATE YOUR ACCOUNT</h4>
+              {errorMsg && <ErrorStyles>{errorMsg}</ErrorStyles>}
+            </div>
             <form onSubmit={handleSubmit(handleRegister)}>
               <div className="inner">
                 <motion.div
