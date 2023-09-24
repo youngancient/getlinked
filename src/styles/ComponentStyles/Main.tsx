@@ -382,13 +382,13 @@ export const SectionThreeStyles = styled(SectionTwoStyles)`
     position: relative;
     z-index: 5;
   }
-  .two .absolute-div {
+  .one .absolute-div {
     position: absolute;
-    left: 0%;
+    right: 0;
     top: 0;
     .purple {
-      width: 44.8125rem;
-      height: 29.25rem;
+      width: 25.25rem;
+      height: 59.9375rem;
       flex-shrink: 0;
       background-blend-mode: hard-light;
     }
@@ -403,6 +403,11 @@ export const SectionThreeStyles = styled(SectionTwoStyles)`
         scale: 0.75;
       }
     }
+    .one .absolute-div {
+      right: 0;
+      left: 50%;
+      top: 0%;
+    }
   }
   @media (max-width: 500px) {
     .circle {
@@ -411,6 +416,11 @@ export const SectionThreeStyles = styled(SectionTwoStyles)`
     .one img {
       width: 294px;
       height: 100%;
+    }
+    .one .absolute-div {
+      width: 15.75rem;
+      height: 27.875rem;
+      flex-shrink: 0;
     }
   }
   @media (min-width: 998px) {
@@ -502,6 +512,18 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
   .guideln img {
     width: 100%;
   }
+  .one .absolute-div {
+    position: absolute;
+    right: 0;
+    top: -80%;
+    .purple {
+      width: 25.25rem;
+      height: 59.9375rem;
+      flex-shrink: 0;
+      background-blend-mode: hard-light;
+    }
+    flex-shrink: 0;
+  }
   @media (max-width: 998px) {
     gap: 6rem;
     flex-direction: column-reverse;
@@ -518,6 +540,11 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
       scale: 0.75;
       transform: translateY(-50%);
     }
+    .one .absolute-div {
+      right: 0;
+      left: 30%;
+      top: 0%;
+    }
   }
   @media (max-width: 500px) {
     .one .guideln {
@@ -527,6 +554,11 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
     .q-icons {
       top: -18%;
       left: 15%;
+    }
+    .one .absolute-div {
+      right: 0;
+      left: 0;
+      top: 0%;
     }
   }
   @media (min-width: 998px) {
@@ -689,6 +721,26 @@ export const PrizesStyle = styled.div`
     width: fit-content;
   }
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  .two{
+    position: relative;
+    .cup-img{
+      z-index: 5;
+    }
+  }
+  .two .absolute-div{
+    position: absolute;
+    // right: 0;
+    left: -15%;
+    top: -60%;
+    .purple {
+      width: 64.8125rem;
+      height: 59.25rem;
+      flex-shrink: 0;
+      background-blend-mode: hard-light;
+    }
+    flex-shrink: 0;
+  }
+
   @media (max-width: 998px) {
     padding: 4rem;
     .img img {
@@ -828,14 +880,36 @@ export const SponsorsStyle = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 2rem;
+    position: relative;
   }
   .one p {
     text-align: center;
+  }
+  .one .absolute-div{
+    position: absolute;
+    right: 0;
+    left: -30%;
+    top: 50%;
+    .purple {
+      width: 64.8125rem;
+      height: 59.25rem;
+      flex-shrink: 0;
+      background-blend-mode: hard-light;
+    }
+    flex-shrink: 0;
+  }
+  .two .absolute-div{
+    position: absolute;
+    right: 0;
+    top: -20%;
+    left: 70%;
+    flex-shrink: 0;
   }
   .two {
     border-radius: 0.3125rem;
     border: 1px solid #d434fe;
     background: rgba(255, 255, 255, 0.01);
+    position: relative;
   }
   .grid {
     display: grid;
@@ -862,6 +936,19 @@ export const SponsorsStyle = styled.div`
   }
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   @media (max-width: 998px) {
+    .two .absolute-div{
+      position: absolute;
+      right: 0;
+      top: -20%;
+      left: 90%;
+      .purple {
+        width: 64.8125rem;
+        height: 59.25rem;
+        flex-shrink: 0;
+        background-blend-mode: hard-light;
+      }
+      flex-shrink: 0;
+    }
     padding: 4rem;
     .one p {
       width: 90%;

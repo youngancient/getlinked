@@ -89,7 +89,6 @@ export const Hero = () => {
                 whileInView="final3"
                 variants={textVariant}
               >
-                
                 <h1>
                   Hackathon <strong>1.0</strong>
                 </h1>
@@ -231,6 +230,16 @@ export const SectionThree = () => {
   return (
     <SectionThreeStyles>
       <div className="one">
+        <div className="absolute-div">
+          <Image
+            alt="immersive vr"
+            src="/assets/right-purple.png"
+            height={300}
+            width={300}
+            sizes="100vw"
+            className="purple"
+          />
+        </div>
         <div className="circle">
           <PurpleCircle />
         </div>
@@ -243,17 +252,6 @@ export const SectionThree = () => {
         />
       </div>
       <div className="two">
-        <div className="absolute-div">
-          {/* <Image
-            alt="immersive vr"
-            src="/assets/purple.png"
-            height={300}
-            width={300}
-            sizes="100vw"
-            className="purple"
-          /> */}
-          
-        </div>
         <CenterMobile>
           <SectionHead textOne="Rules and" textTwo="Guidelines" />
         </CenterMobile>
@@ -297,7 +295,6 @@ export const SectionFour = () => {
             sizes="100vw"
             className="purple"
           />
-          
         </div>
       </div>
       <div className="two">
@@ -325,6 +322,16 @@ export const FAQ = () => {
   return (
     <SectionFiveStyles id="faq">
       <div className="one">
+        <div className="absolute-div">
+          <Image
+            alt="purple"
+            src="/assets/right-purple.png"
+            height={300}
+            width={300}
+            sizes="100vw"
+            className="purple"
+          />
+        </div>
         <motion.div
           className="guideln"
           transition={{
@@ -445,6 +452,16 @@ export const Prizes = () => {
         </div>
       </div>
       <div className="two">
+        <div className="absolute-div">
+          <Image
+            alt="purple"
+            src="/assets/purple.svg"
+            height={300}
+            width={300}
+            sizes="100vw"
+            className="purple"
+          />
+        </div>
         <motion.div
           className="cup-img desktop"
           variants={CupVariant}
@@ -503,6 +520,16 @@ export const Sponsors = () => {
   return (
     <SponsorsStyle>
       <div className="one">
+        <div className="absolute-div">
+          <Image
+            alt="purple"
+            src="/assets/purple.png"
+            height={300}
+            width={300}
+            sizes="100vw"
+            className="purple"
+          />
+        </div>
         <motion.h3 initial="initial" whileInView="final" variants={textVariant}>
           Partners and Sponsors
         </motion.h3>
@@ -512,6 +539,16 @@ export const Sponsors = () => {
         </SmallTextStyles>
       </div>
       <div className="two">
+      <div className="absolute-div">
+          <Image
+            alt="purple"
+            src="/assets/purple.png"
+            height={300}
+            width={300}
+            sizes="100vw"
+            className="purple"
+          />
+        </div>
         <div className="grid">
           <div className="sponsor">
             <Image

@@ -39,6 +39,8 @@ export const SectionHeadStyles = styled.div`
   flex-direction: column;
   gap: 2.5rem;
   width: fit-content;
+  position: relative;
+  z-index: 5;
   h3 {
     color: #fff;
     font-family: Clash Display;
