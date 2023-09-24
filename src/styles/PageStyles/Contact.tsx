@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ContactStyles = styled.div`
-  border: 2px solid #fff;
   display: flex;
   form {
     border-radius: 0.75rem;
@@ -14,7 +13,8 @@ export const ContactStyles = styled.div`
   .inner div p {
     margin-top: 0.25rem;
   }
-  form h3, .one h3 {
+  form h3,
+  .one h3 {
     color: #d434fe;
     font-family: Clash Display;
     font-size: 1.5rem;
@@ -30,7 +30,8 @@ export const ContactStyles = styled.div`
     flex-direction: column;
     gap: 2rem;
   }
-  input, textarea {
+  input,
+  textarea {
     width: 100%;
     height: 47px;
     border-radius: 4px;
@@ -45,7 +46,8 @@ export const ContactStyles = styled.div`
     font-weight: 400;
     line-height: normal;
   }
-  input::placeholder, textarea::placeholder {
+  input::placeholder,
+  textarea::placeholder {
     color: #fff;
     font-family: Montserrat;
     font-size: 1rem;
@@ -53,12 +55,24 @@ export const ContactStyles = styled.div`
     font-weight: 400;
     line-height: normal;
   }
+  /* Hide the number input buttons for Webkit browsers (Chrome, Safari) */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove the default appearance */
+    appearance: none; /* Remove the default appearance (for Firefox) */
+    margin: 0; /* Remove any default margin */
+  }
+
+  /* Hide the number input buttons for Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield; /* Restore the input to a text input appearance (for Firefox) */
+  }
   .btn {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .socials{
+  .socials {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -79,13 +93,13 @@ export const ContactStyles = styled.div`
     .message textarea {
       height: 10rem;
     }
-    .one-b{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-        justify-content: center;
-        margin-top: 4rem;
+    .one-b {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4rem;
     }
   }
   @media (max-width: 500px) {
@@ -113,16 +127,18 @@ export const ContactStyles = styled.div`
     .message textarea {
       height: 7.4375rem;
     }
-    .one-a, .one, .one-b{
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
+    .one-a,
+    .one,
+    .one-b {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
-    .one{
-        gap: 2rem;
+    .one {
+      gap: 2rem;
     }
-    .one-b{
-        gap: 1rem;
+    .one-b {
+      gap: 1rem;
     }
   }
 `;

@@ -33,7 +33,7 @@ export const ContactSuccessStyles = styled(motion.div).attrs(() => ({
       color: #fff;
       text-align: center;
       font-family: Montserrat;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-style: normal;
       font-weight: 600;
       line-height: normal;
@@ -46,9 +46,9 @@ export const ContactSuccessStyles = styled(motion.div).attrs(() => ({
       }
     }
     @media (max-width: 500px) {
-      padding: 2rem;
+      padding: 0rem;
       .message {
-        padding: 0rem;
+        padding: 2rem;
       }
       h3 {
         font-size: 1rem;
@@ -58,6 +58,7 @@ export const ContactSuccessStyles = styled(motion.div).attrs(() => ({
       .message {
         width: 40%;
         padding: 2rem 4rem;
+        padding-bottom: 3rem;
       }
     }
   `;
