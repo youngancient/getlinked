@@ -14,9 +14,12 @@ import Head from "next/head";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { RegisterImgVariants, textVariant } from "@/animations/animations";
-import { Dropdown, Success } from "@/components/Auth/Register";
+import { DropdownA, DropdownB, Success } from "@/components/Auth/Register";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
+import axios from "axios";
+import { BASE_URL } from "../../../constants/libs";
+import { GroupSizes, IGroupSize } from "../../../constants/GroupSize";
 
 interface IForm {
   teamName: string;
@@ -46,6 +49,9 @@ const Register = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isAgree, setIsAgree] = useState(false);
 
+  const [categories, setCategories] = useState<ICategory[] | null>(null);
+  const [groupSizes, setGroupSizes] = useState<IGroupSize[]>(GroupSizes);
+
   const handleRegister = (data: IForm) => {
     console.log(data);
     setLoading(true);
@@ -63,9 +69,21 @@ const Register = () => {
   const handleAgree = () => {
     setIsAgree(!isAgree);
   };
-  useEffect(()=>{
-    setValue("isAgreed",isAgree);
-  },[isAgree]);
+
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}/hackathon/categories-list`)
+      .then((res) => {
+        const newCategories: ICategory[] = res.data.map((ele: TCategory) => {
+          return { ...ele, isSelected: false };
+        });
+        setCategories(newCategories);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+  useEffect(() => {
+    setValue("isAgreed", isAgree);
+  }, [isAgree]);
 
   return (
     <>
@@ -230,7 +248,11 @@ const Register = () => {
                   variants={textVariant}
                 >
                   <SmallTextStyles>Category</SmallTextStyles>
-                  <Dropdown placeholder="Select your category" />
+                  <DropdownA
+                    placeholder="Select your category"
+                    stateValue={categories}
+                    setCategories={setCategories}
+                  />
                 </motion.div>
                 <motion.div
                   className="form-ele"
@@ -239,7 +261,11 @@ const Register = () => {
                   variants={textVariant}
                 >
                   <SmallTextStyles>Group Size</SmallTextStyles>
-                  <Dropdown placeholder="Select" />
+                  <DropdownB
+                    placeholder="Select"
+                    stateValue={groupSizes}
+                    setGroupSize={setGroupSizes}
+                  />
                 </motion.div>
               </div>
               <div className="bottom">
