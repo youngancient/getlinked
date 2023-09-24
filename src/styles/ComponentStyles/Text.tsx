@@ -50,18 +50,18 @@ export const SectionHeadStyles = styled.div`
   .color {
     color: #d434fe;
   }
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     gap: 1.5rem;
-    h3{
+    h3 {
       font-size: 1.25rem;
     }
   }
 `;
 
-interface ISmallText{
-  color ?: string;
+interface ISmallText {
+  color?: string;
 }
-export const SmallTextStyles = styled(motion.p).attrs<ISmallText>(()=>({
+export const SmallTextStyles = styled(motion.p).attrs<ISmallText>(() => ({
   initial: "initial",
   whileInView: "final",
   variants: textVariant,
@@ -72,16 +72,18 @@ export const SmallTextStyles = styled(motion.p).attrs<ISmallText>(()=>({
   font-style: normal;
   font-weight: 400;
   line-height: 1.71875rem; /* 196.429% */
-  ${props => props.color && css`
-    color: ${props.color};
-  `}
-  strong{
-    color: #FF26B9;
+  ${(props) =>
+    props.color &&
+    css`
+      color: ${props.color};
+    `}
+  strong {
+    color: #ff26b9;
   }
-  b{
+  b {
     margin-left: 0.25rem;
   }
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     font-size: 0.8125rem;
   }
 `;
@@ -92,16 +94,18 @@ export const NonAnimatedSmallTextStyles = styled.p<ISmallText>`
   font-style: normal;
   font-weight: 400;
   line-height: 1.71875rem; /* 196.429% */
-  ${props => props.color && css`
-    color: ${props.color};
-  `}
-  strong{
-    color: #FF26B9;
+  ${(props) =>
+    props.color &&
+    css`
+      color: ${props.color};
+    `}
+  strong {
+    color: #ff26b9;
   }
-  b{
+  b {
     margin-left: 0.25rem;
   }
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     font-size: 0.8125rem;
   }
 `;
@@ -113,19 +117,28 @@ export const SmallerTextStyles = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 1.2rem; /* 196.429% */
-  
-  strong{
-    color: #FF26B9;
+
+  strong {
+    color: #ff26b9;
   }
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     font-size: 0.6125rem;
   }
 `;
 
 export const ErrorStyles = styled.p`
-  color: #FF5733;
+  color: #ff5733;
   font-family: Montserrat;
   font-size: 0.6rem;
   font-style: normal;
   font-weight: 400;
+`;
+
+export const NormalTextStyles = styled.p`
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 `;
