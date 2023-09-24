@@ -28,7 +28,10 @@ export const Header = () => {
     setShowMobileNav(false);
   };
   const router = useRouter();
-
+  const mobileNavHelper =()=>{
+    router.push("/auth/register");
+    setShowMobileNav(false);
+  }
   return (
     <HeaderStyles>
       <div className="logo">
@@ -85,7 +88,7 @@ export const Header = () => {
                     </Link>
                   ))}
                 </div>
-                <MediumBtnStyle onClick={() => router.push("/auth/register")}>
+                <MediumBtnStyle onClick={mobileNavHelper}>
                   Register
                 </MediumBtnStyle>
               </div>
