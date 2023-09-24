@@ -10,13 +10,17 @@ import Head from "next/head";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
-import { ContacSuccess } from "@/components/Contact/Contact";
+import { AnimatePresence, motion } from "framer-motion";
+import { ContactSuccess } from "@/components/Contact/Contact";
 import { ButtonLoader } from "@/styles/PageStyles/auth/Register";
+import { textVariant } from "@/animations/animations";
+import { BASE_URL } from "../../constants/libs";
+import axios from "axios";
 
-interface IForm {
+interface IContactForm {
   firstName: string;
   email: string;
+  phone: string;
   message: string;
 }
 
@@ -27,11 +31,12 @@ const Contact = () => {
     setValue,
     handleSubmit,
     formState: { errors },
-  } = useForm<IForm>({
+  } = useForm<IContactForm>({
     mode: "onBlur",
     defaultValues: {
       firstName: "",
       email: "",
+      phone: "",
       message: "",
     },
   });
@@ -40,13 +45,25 @@ const Contact = () => {
   const cancel = () => {
     setIsSuccess(false);
   };
-  const sendMessage = () => {
-    setLoading(true);
-    setTimeout(() => {
+  const sendMessage = async (formData: IContactForm) => {
+    
+    try {
+      setLoading(true);
+      const { data } = await axios.post(`${BASE_URL}/hackathon/contact-form`, {
+        first_name: formData.firstName,
+        email: formData.email,
+        message: formData.message,
+        phone_number : formData.phone,
+      });
+      if (data) {
+        setLoading(false);
+        setIsSuccess(true);
+        reset();
+      }
+    } catch (error) {
       setLoading(false);
-      reset();
-      setIsSuccess(true);
-    }, 2000);
+      console.log(error);
+    }
   };
   return (
     <>
@@ -58,12 +75,18 @@ const Contact = () => {
       </Head>
       <main>
         <AnimatePresence>
-          {isSuccess && <ContacSuccess handleClose={cancel} key="kagura" />}
+          {isSuccess && <ContactSuccess handleClose={cancel} key="kagura" />}
         </AnimatePresence>
         <ContactStyles>
           <div className="one">
             <div className="one-a">
-              <h3>Get in touch</h3>
+              <motion.h3
+                initial="initial"
+                whileInView="final"
+                variants={textVariant}
+              >
+                Get in touch
+              </motion.h3>
               <NormalTextStyles>
                 Contact <br /> Information
               </NormalTextStyles>
@@ -97,14 +120,31 @@ const Contact = () => {
           <div className="two">
             <form onSubmit={handleSubmit(sendMessage)}>
               <div className="h">
-                <h3>Questions or need assistance?</h3>
-                <h3>Let us know about it!</h3>
+                <motion.h3
+                  initial="initial"
+                  whileInView="final"
+                  variants={textVariant}
+                >
+                  Questions or need assistance?
+                </motion.h3>
+                <motion.h3
+                  initial="initial"
+                  whileInView="final2"
+                  variants={textVariant}
+                >
+                  Let us know about it!
+                </motion.h3>
               </div>
               <SmallTextStyles className="mobile">
                 Email us below to any question related to our event
               </SmallTextStyles>
               <div className="inner">
-                <div className="fname">
+                <motion.div
+                  className="fname"
+                  initial="initial"
+                  whileInView="final2"
+                  variants={textVariant}
+                >
                   <input
                     type="text"
                     {...register("firstName", { required: "Name is required" })}
@@ -117,8 +157,13 @@ const Contact = () => {
                       {errors.firstName.message}
                     </ErrorStyles>
                   )}
-                </div>
-                <div className="email">
+                </motion.div>
+                <motion.div
+                  className="email"
+                  initial="initial"
+                  whileInView="final2"
+                  variants={textVariant}
+                >
                   <input
                     type="email"
                     {...register("email", { required: "Email is required" })}
@@ -131,8 +176,39 @@ const Contact = () => {
                       {errors.firstName.message}
                     </ErrorStyles>
                   )}
-                </div>
-                <div className="message">
+                </motion.div>
+                <motion.div
+                  className="phone"
+                  initial="initial"
+                  whileInView="final2"
+                  variants={textVariant}
+                >
+                  <input
+                    type="number"
+                    {...register("phone", {
+                      required: "Phone is required",
+                      minLength: {
+                        value: 11,
+                        message: "11 digits minimum",
+                      },
+                    })}
+                    id=""
+                    placeholder="Enter your phone number"
+                  />
+
+                  {errors?.phone && (
+                    <ErrorStyles className="down">
+                      {" "}
+                      {errors.phone.message}{" "}
+                    </ErrorStyles>
+                  )}
+                </motion.div>
+                <motion.div
+                  className="message"
+                  initial="initial"
+                  whileInView="final2"
+                  variants={textVariant}
+                >
                   <textarea
                     id=""
                     rows={4}
@@ -147,10 +223,12 @@ const Contact = () => {
                       {errors.message.message}
                     </ErrorStyles>
                   )}
-                </div>
+                </motion.div>
               </div>
               <div className="btn">
-                <LargeBtnStyle>{isLoading ? <ButtonLoader /> : "Submit"}</LargeBtnStyle>
+                <LargeBtnStyle>
+                  {isLoading ? <ButtonLoader /> : "Submit"}
+                </LargeBtnStyle>
               </div>
             </form>
             <div className="mobile">

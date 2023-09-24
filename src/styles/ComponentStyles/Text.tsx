@@ -134,7 +134,11 @@ export const ErrorStyles = styled.p`
   font-weight: 400;
 `;
 
-export const NormalTextStyles = styled.p`
+export const NormalTextStyles = styled(motion.p).attrs(() => ({
+  initial: "initial",
+  whileInView: "final2",
+  variants: textVariant,
+}))`
   color: #fff;
   font-family: Montserrat;
   font-size: 1rem;

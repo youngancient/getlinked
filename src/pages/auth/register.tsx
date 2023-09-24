@@ -21,7 +21,6 @@ import axios from "axios";
 import { BASE_URL } from "../../../constants/libs";
 import { GroupSizes, IGroupSize } from "../../../constants/GroupSize";
 import { useRouter } from "next/router";
-import { NumberLiteralType } from "typescript";
 
 interface IForm {
   teamName: string;
@@ -60,7 +59,7 @@ const Register = () => {
   const [groupSizes, setGroupSizes] = useState<IGroupSize[]>(GroupSizes);
   const router = useRouter();
   const handleRegister = async (formData: IForm) => {
-    console.log(formData);
+    // console.log(formData);
     if (formData.groupSize !== null && formData.category !== null) {
       try {
         setLoading(true);

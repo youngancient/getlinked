@@ -8,7 +8,7 @@ import { SuccessVariants } from "@/animations/register";
 interface IContactSuccess {
   handleClose: () => void;
 }
-export const ContacSuccess: FunctionComponent<IContactSuccess> = ({
+export const ContactSuccess: FunctionComponent<IContactSuccess> = ({
   handleClose,
 }) => {
   return (
@@ -28,8 +28,8 @@ export const ContacSuccess: FunctionComponent<IContactSuccess> = ({
           className="check"
         />
         <h3>
-          Holla! <br />
-          We have got your Mail
+          Holla! We have got your Mail<br />
+          You will hear from us soon!
         </h3>
         <div className="btn">
           <LargeBtnStyle onClick={handleClose}>Back</LargeBtnStyle>
