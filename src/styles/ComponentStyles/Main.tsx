@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const HeroStyles = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  overflow-x: hidden;
   .intro {
     p {
       color: #fff;
@@ -885,7 +887,7 @@ export const SponsorsStyle = styled.div`
   .one p {
     text-align: center;
   }
-  .one .absolute-div{
+  .one .absolute-div, .two .absolute-div{
     position: absolute;
     right: 0;
     left: -30%;
@@ -901,8 +903,8 @@ export const SponsorsStyle = styled.div`
   .two .absolute-div{
     position: absolute;
     right: 0;
-    top: -20%;
-    left: 70%;
+    top: -10%;
+    left: 75%;
     flex-shrink: 0;
   }
   .two {
@@ -1056,6 +1058,7 @@ export const PrivacyStyles = styled.div`
   .policies {
     border-radius: 0.3125rem;
     background: rgba(217, 217, 217, 0.03);
+    border: 1px solid #D434FE;
   }
   .check {
     display: flex;

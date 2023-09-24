@@ -73,6 +73,8 @@ export const SmallTextStyles = styled(motion.p).attrs<ISmallText>(() => ({
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
+  position: relative;
+  z-index: 5;
   line-height: 1.71875rem; /* 196.429% */
   ${(props) =>
     props.color &&

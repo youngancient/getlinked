@@ -34,6 +34,7 @@ import {
   HeroImgVariant,
   PositionVariants,
   QuestionVariant,
+  ScaleImgVariant,
   bellVariants,
   floatingVariants,
   positionParentVariants,
@@ -150,7 +151,7 @@ export const Hero = () => {
             <AbsoluteDiv>
               <Image
                 alt="immersive vr"
-                src="/assets/purple-powder.png"
+                src="/assets/purple.png"
                 height={100}
                 width={100}
                 sizes="100vw"
@@ -160,14 +161,9 @@ export const Hero = () => {
           </div>
           <motion.div
             className="img-two img"
-            whileInView={{
-              rotate: 1080, // Rotate 3 times (3 * 360 degrees)
-            }}
-            transition={{
-              delay: 0.25,
-              duration: 4, // Total duration for 3 rotations
-              ease: "easeInOut", // Linear easing for consistent rotation speed
-            }}
+            whileInView="final"
+            initial="initial"
+            variants={ScaleImgVariant}
           >
             <Image
               alt="touch"
@@ -539,7 +535,7 @@ export const Sponsors = () => {
         </SmallTextStyles>
       </div>
       <div className="two">
-      <div className="absolute-div">
+        <div className="absolute-div">
           <Image
             alt="purple"
             src="/assets/purple.png"
