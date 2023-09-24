@@ -7,5 +7,9 @@ export const AbsoluteDiv = styled.div`
     .purple{
         width: 951px;
         height: 994px;
+        mix-blend-mode: hard-light;
+    }
+    @media (max-width: 998px){
+        display: none;
     }
 `

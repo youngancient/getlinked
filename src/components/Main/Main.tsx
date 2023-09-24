@@ -56,6 +56,16 @@ export const Hero = () => {
         <div className="one">
           <div className="banner">
             <div className="tw">
+              <div className="absolute-div">
+                <Image
+                  alt="immersive vr"
+                  src="/assets/purple.svg"
+                  height={300}
+                  width={300}
+                  sizes="100vw"
+                  className="purple"
+                />
+              </div>
               <motion.h1
                 initial="initial"
                 whileInView="final2"
@@ -79,6 +89,7 @@ export const Hero = () => {
                 whileInView="final3"
                 variants={textVariant}
               >
+                
                 <h1>
                   Hackathon <strong>1.0</strong>
                 </h1>
@@ -232,6 +243,17 @@ export const SectionThree = () => {
         />
       </div>
       <div className="two">
+        <div className="absolute-div">
+          {/* <Image
+            alt="immersive vr"
+            src="/assets/purple.png"
+            height={300}
+            width={300}
+            sizes="100vw"
+            className="purple"
+          /> */}
+          
+        </div>
         <CenterMobile>
           <SectionHead textOne="Rules and" textTwo="Guidelines" />
         </CenterMobile>
@@ -264,7 +286,19 @@ export const SectionFour = () => {
           width={0}
           height={0}
           sizes="100vw"
+          className="judges"
         />
+        <div className="absolute-div">
+          <Image
+            alt="immersive vr"
+            src="/assets/purple.png"
+            height={300}
+            width={300}
+            sizes="100vw"
+            className="purple"
+          />
+          
+        </div>
       </div>
       <div className="two">
         <CenterMobile>

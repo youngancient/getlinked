@@ -12,6 +12,8 @@ export const LargeBtnStyle = styled.button`
     #fe34b9 100%
   );
   color: #fff;
+  z-index: 10;
+  position: relative;
   font-family: Montserrat;
   font-size: 1rem;
   font-style: normal;

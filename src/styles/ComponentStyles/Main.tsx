@@ -11,6 +11,8 @@ export const HeroStyles = styled.div`
       font-weight: 700;
       line-height: normal;
       text-align: right;
+      position: relative;
+      z-index: 5;
     }
     .rule {
       display: flex;
@@ -23,12 +25,25 @@ export const HeroStyles = styled.div`
     flex-direction: column;
     justify-content: flex-end;
   }
+  .tw .absolute-div {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    z-index: 0;
+    img {
+      width: 600px;
+      height: 600px;
+      background-blend-mode: hard-light;
+    }
+  }
   h1 {
     color: #fff;
     font-family: Clash Display;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    position: relative;
+    z-index: 5;
     strong {
       color: #d434fe;
       margin-left: 4px;
@@ -51,10 +66,10 @@ export const HeroStyles = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    .lookbeyond{
+    .lookbeyond {
       mix-blend-mode: luminosity;
     }
-    .img-two{
+    .img-two {
       mix-blend-mode: hard-light;
     }
   }
@@ -139,6 +154,12 @@ export const HeroStyles = styled.div`
       left: 0;
       right: 0;
     }
+    .absolute-div .purple {
+      // display: none;
+      width: 14.75rem;
+      height: 17.625rem;
+      flex-shrink: 0;
+    }
     .h1,
     h1 {
       display: flex;
@@ -167,6 +188,16 @@ export const HeroStyles = styled.div`
   @media (max-width: 500px) {
     h1 {
       font-size: 2rem;
+    }
+    .tw .absolute-div {
+      top: -25%;
+      left: -20%;
+    }
+    .absolute-div .purple {
+      // display: none;
+      width: 5.75rem;
+      height: 5.625rem;
+      flex-shrink: 0;
     }
     .intro {
       p {
@@ -212,14 +243,14 @@ export const HeroStyles = styled.div`
       align-items: center;
       display: flex;
       margin-left: 0.75rem;
-      .chain{
+      .chain {
         position: absolute;
         left: -50%;
       }
     }
   }
   @media (max-width: 365px) {
-    .intro p{
+    .intro p {
       font-size: 0.8rem;
     }
   }
@@ -351,6 +382,18 @@ export const SectionThreeStyles = styled(SectionTwoStyles)`
     position: relative;
     z-index: 5;
   }
+  .two .absolute-div {
+    position: absolute;
+    left: 0%;
+    top: 0;
+    .purple {
+      width: 44.8125rem;
+      height: 29.25rem;
+      flex-shrink: 0;
+      background-blend-mode: hard-light;
+    }
+    flex-shrink: 0;
+  }
   @media (max-width: 998px) {
     gap: 1.5rem;
     .circle {
@@ -398,9 +441,19 @@ export const SectionFourStyles = styled(SectionTwoStyles)`
       scale: 0.9;
     }
   }
-  .one img {
+  .judges {
     position: relative;
     z-index: 5;
+  }
+  .one .absolute-div {
+    position: absolute;
+    left: -10%;
+    top: 10%;
+    .purple {
+      flex-shrink: 0;
+      background-blend-mode: hard-light;
+    }
+    flex-shrink: 0;
   }
   @media (max-width: 998px) {
     gap: 1rem;
@@ -446,7 +499,7 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
   .one {
     position: relative;
   }
-  .guideln img{
+  .guideln img {
     width: 100%;
   }
   @media (max-width: 998px) {
@@ -529,7 +582,7 @@ export const TimeLineStyles = styled.div`
     font-weight: 700;
     line-height: 0%; /* 0rem */
   }
-  background: #150E28;
+  background: #150e28;
   @media (max-width: 998px) {
     padding: 6rem 0rem;
     .one p {
@@ -568,7 +621,7 @@ export const PrizesStyle = styled.div`
   }
   display: flex;
   flex-direction: column;
-  background: #150E28;
+  background: #150e28;
   .two {
     display: flex;
     align-items: flex-start;
@@ -928,7 +981,7 @@ export const PrivacyStyles = styled.div`
       flex-shrink: 0;
     }
   }
-  background: #150E28;
+  background: #150e28;
   h5 {
     color: #d434fe;
     font-family: Montserrat;
@@ -1012,7 +1065,7 @@ export const PrivacyStyles = styled.div`
     .policy-text {
       gap: 1rem;
     }
-    .crypt{
+    .crypt {
       top: -25%;
       left: 5%;
     }

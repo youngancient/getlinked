@@ -8,6 +8,8 @@ export const HeaderStyles = styled.header`
   align-items: center;
   width: 100%;
   justify-content: space-between;
+  z-index: 20;
+  position: relative;
   @media (max-width: 767px) {
     .desktop-menu {
       display: none;
