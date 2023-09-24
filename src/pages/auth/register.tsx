@@ -20,6 +20,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../constants/libs";
 import { GroupSizes, IGroupSize } from "../../../constants/GroupSize";
+import { useRouter } from "next/router";
 
 interface IForm {
   teamName: string;
@@ -27,6 +28,8 @@ interface IForm {
   email: string;
   topic: string;
   isAgreed: boolean;
+  category: string;
+  groupSize: string;
 }
 const Register = () => {
   const {
@@ -43,6 +46,8 @@ const Register = () => {
       email: "",
       topic: "",
       isAgreed: false,
+      category: "",
+      groupSize: "",
     },
   });
   const [isLoading, setLoading] = useState(false);
@@ -51,19 +56,21 @@ const Register = () => {
 
   const [categories, setCategories] = useState<ICategory[] | null>(null);
   const [groupSizes, setGroupSizes] = useState<IGroupSize[]>(GroupSizes);
-
+  const router = useRouter();
   const handleRegister = (data: IForm) => {
     console.log(data);
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setIsSuccess(true);
-      reset();
-    }, 2000);
+    if (data.groupSize !== "" && data.category !== "") {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setIsSuccess(true);
+        reset();
+      }, 2000);
+    }
   };
 
   const cancel = () => {
-    setIsSuccess(false);
+    router.push("/");
   };
 
   const handleAgree = () => {
@@ -81,9 +88,21 @@ const Register = () => {
       })
       .catch((error) => console.log(error));
   }, []);
+
   useEffect(() => {
     setValue("isAgreed", isAgree);
   }, [isAgree]);
+
+  useEffect(() => {
+    const selectedSize = groupSizes?.find((ele) => ele.isSelected === true);
+    const selectedCategory = categories?.find((ele) => ele.isSelected === true);
+    if (selectedSize) {
+      setValue("groupSize", selectedSize.num);
+    }
+    if (selectedCategory) {
+      setValue("category", selectedCategory.name);
+    }
+  }, [categories, groupSizes]);
 
   return (
     <>

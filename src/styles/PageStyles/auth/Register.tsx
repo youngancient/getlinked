@@ -272,9 +272,6 @@ export const DropdownStyles = styled.div<IDropdownStyles>`
       width: fit-content;
       min-width: 100px;
     }
-    .dropdown p {
-      padding: 0.5rem 0.25rem;
-    }
   }
 `;
 
@@ -304,7 +301,7 @@ export const DropdownItemStyle = styled.p<IDropdownStyles>`
       border-bottom: none;
     `}
   @media (max-width: 500px) {
-    padding: 0.5rem 0.25rem;
+    padding: 0.5rem 0.75rem;
   }
 `;
 export const ButtonLoader = styled.div`
