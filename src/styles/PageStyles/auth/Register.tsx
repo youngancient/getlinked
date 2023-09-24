@@ -188,7 +188,7 @@ export const RegisterStyles = styled.div`
     .down {
       margin-top: 0.25rem;
     }
-    .check{
+    .check {
       gap: 1rem;
     }
     .check p {
@@ -232,7 +232,8 @@ export const DropdownStyles = styled.div<IDropdownStyles>`
   display: flex;
   justify-content: center;
   position: relative;
-  .display {
+  .display,
+  .gs {
     height: 2.9375rem;
     display: flex;
     align-items: center;
@@ -248,8 +249,12 @@ export const DropdownStyles = styled.div<IDropdownStyles>`
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
   .dropdown {
+    background: #fff;
     position: absolute;
     top: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
   .svg {
     transition: 0.3s;
@@ -263,12 +268,45 @@ export const DropdownStyles = styled.div<IDropdownStyles>`
       }
     `}
   @media (max-width: 500px) {
-    .display {
+    .gs {
       width: fit-content;
+      min-width: 100px;
+    }
+    .dropdown p {
+      padding: 0.5rem 0.25rem;
     }
   }
 `;
 
+// interface IDropdownStyles {
+//   $isSelected: boolean;
+// }
+export const DropdownItemStyle = styled.p<IDropdownStyles>`
+  color: #000;
+  padding: 0.75rem 0.5rem;
+  font-family: Montserrat;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  ${(props) =>
+    props.$isActive &&
+    css`
+      color: #fff;
+      background: linear-gradient(
+        270deg,
+        #903aff 0%,
+        #d434fe 56.42%,
+        #ff26b9 99.99%,
+        #fe34b9 100%        
+      );
+      border-bottom: none;
+    `}
+  @media (max-width: 500px) {
+    padding: 0.5rem 0.25rem;
+  }
+`;
 export const ButtonLoader = styled.div`
   width: 20px;
   height: 20px;
