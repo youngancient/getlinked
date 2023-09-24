@@ -22,6 +22,11 @@ export const LargeBtnStyle = styled.button`
     height: 3.3125rem;
     flex-shrink: 0;
   }
+  &[disabled] {
+    background: #ccc; /* Change background color when disabled */
+    cursor: not-allowed; /* Change cursor when disabled */
+    /* You can customize other styles as needed */
+  }
 `;
 
 export const MediumBtnStyle = styled(LargeBtnStyle)`
