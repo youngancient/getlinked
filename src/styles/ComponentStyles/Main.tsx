@@ -51,6 +51,12 @@ export const HeroStyles = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    .lookbeyond{
+      mix-blend-mode: luminosity;
+    }
+    .img-two{
+      mix-blend-mode: hard-light;
+    }
   }
   .two .img-one {
     img {

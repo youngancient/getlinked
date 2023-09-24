@@ -40,6 +40,7 @@ import {
   textVariant,
 } from "@/animations/animations";
 import { useRouter } from "next/router";
+import { AbsoluteDiv } from "@/styles/ComponentStyles/Absolute";
 
 export const Hero = () => {
   const router = useRouter();
@@ -56,9 +57,9 @@ export const Hero = () => {
           <div className="banner">
             <div className="tw">
               <motion.h1
-              initial = "initial"
-              whileInView= "final2"
-              variants={textVariant}
+                initial="initial"
+                whileInView="final2"
+                variants={textVariant}
               >
                 getlinked{" "}
                 <strong className="tech">
@@ -72,10 +73,11 @@ export const Hero = () => {
                   />
                 </strong>
               </motion.h1>
-              <motion.div className="h1"
-              initial = "initial"
-              whileInView= "final3"
-              variants={textVariant}
+              <motion.div
+                className="h1"
+                initial="initial"
+                whileInView="final3"
+                variants={textVariant}
               >
                 <h1>
                   Hackathon <strong>1.0</strong>
@@ -98,28 +100,33 @@ export const Hero = () => {
                 </div>
               </motion.div>
             </div>
-            <motion.p className="btm-text"
-            initial = "initial"
-            whileInView= "final3"
-            variants={textVariant}
+            <motion.p
+              className="btm-text"
+              initial="initial"
+              whileInView="final3"
+              variants={textVariant}
             >
               Participate in getlinked tech Hackathon 2023 stand a chance to win
               a Big prize
             </motion.p>
-            <motion.div className="btn"
-            initial = "initial"
-            whileInView= "final3"
-            variants={textVariant}
+            <motion.div
+              className="btn"
+              initial="initial"
+              whileInView="final3"
+              variants={textVariant}
             >
-              <LargeBtnStyle onClick={() => router.push("/auth/register")}>Register</LargeBtnStyle>
+              <LargeBtnStyle onClick={() => router.push("/auth/register")}>
+                Register
+              </LargeBtnStyle>
             </motion.div>
           </div>
           <Stopwatch hours={18} minutes={0} seconds={0} />
         </div>
-        <motion.div className="two"
-        initial = "initial"
-        whileInView= "final"
-        variants={HeroImgVariant}
+        <motion.div
+          className="two"
+          initial="initial"
+          whileInView="final"
+          variants={HeroImgVariant}
         >
           <div className="img-one img">
             <Image
@@ -128,17 +135,29 @@ export const Hero = () => {
               height={0}
               width={0}
               sizes="100vw"
+              className="lookbeyond"
             />
+            <AbsoluteDiv>
+              <Image
+                alt="immersive vr"
+                src="/assets/purple-powder.png"
+                height={100}
+                width={100}
+                sizes="100vw"
+                className="purple"
+              />
+            </AbsoluteDiv>
           </div>
-          <motion.div className="img-two img"
-          whileInView={{
-            rotate: 1080, // Rotate 3 times (3 * 360 degrees)
-          }}
-          transition={{
-            delay : 0.25,
-            duration: 4, // Total duration for 3 rotations
-            ease: "easeInOut", // Linear easing for consistent rotation speed
-          }}
+          <motion.div
+            className="img-two img"
+            whileInView={{
+              rotate: 1080, // Rotate 3 times (3 * 360 degrees)
+            }}
+            transition={{
+              delay: 0.25,
+              duration: 4, // Total duration for 3 rotations
+              ease: "easeInOut", // Linear easing for consistent rotation speed
+            }}
           >
             <Image
               alt="touch"
