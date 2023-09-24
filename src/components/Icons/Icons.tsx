@@ -70,19 +70,19 @@ export const XVector = () => {
 };
 
 const PathVariant = {
-  initial : {
-    opacity : 0,
-    pathLength : 0,
+  initial: {
+    opacity: 0,
+    pathLength: 0,
   },
-  final :{
+  final: {
     opacity: 1,
-    pathLength : 1,
-    transition :{
+    pathLength: 1,
+    transition: {
       delay: 0.25,
-      duration: 1
-    }
-  }
-}
+      duration: 1,
+    },
+  },
+};
 export const FancyRule = () => {
   return (
     <FancyRuleStyles>
@@ -98,8 +98,8 @@ export const FancyRule = () => {
           d="M1 14.043C43.3333 5.7097 154.4 -5.95697 254 14.043"
           stroke="#FF26B9"
           strokeWidth="5"
-          initial = "initial"
-          animate= "final"
+          initial="initial"
+          animate="final"
           variants={PathVariant}
         />
       </svg>
@@ -121,6 +121,21 @@ export const FancyRule = () => {
   );
 };
 
+export const Tick = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="white"
+      strokeWidth="2"
+    >
+      <path d="M5 12L10 17L19 7" />
+    </svg>
+  );
+};
 export const PurpleCircle = () => {
   return (
     <svg

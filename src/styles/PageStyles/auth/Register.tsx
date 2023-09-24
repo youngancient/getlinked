@@ -1,4 +1,6 @@
 import { Rotate } from "@/animations/keyframes";
+import { OverlayVariants } from "@/animations/register";
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
 export const RegisterStyles = styled.div`
@@ -265,7 +267,12 @@ export const ButtonLoader = styled.div`
   animation: ${Rotate} 0.6s ease infinite;
 `;
 
-export const SuccessStyles = styled.div`
+export const SuccessStyles = styled(motion.div).attrs(()=>({
+  initial : "initial",
+  animate : "final",
+  exit : "exit",
+  variants : OverlayVariants
+}))`
   background: rgba(21, 14, 40, 0.93);
   z-index: 5;
   position: fixed;
@@ -323,7 +330,10 @@ export const SuccessStyles = styled.div`
   .p{
     margin-top: 1rem;
   }
-  @media (max-width: 900px) {
+  .check p{
+    cursor: pointer;
+  }
+  @media (max-width: 998px) {
     padding: 2rem;
     .message {
       padding: 4rem 2rem;

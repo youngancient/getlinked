@@ -1,4 +1,4 @@
-import { DottedLine } from "@/components/Icons/Icons";
+import { DottedLine, Tick } from "@/components/Icons/Icons";
 import { LargeBtnStyle } from "@/styles/ComponentStyles/Buttons";
 import { CheckBox } from "@/styles/ComponentStyles/Icons";
 import {
@@ -12,7 +12,7 @@ import {
 } from "@/styles/PageStyles/auth/Register";
 import Head from "next/head";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { RegisterImgVariants, textVariant } from "@/animations/animations";
 import { Dropdown, Success } from "@/components/Auth/Register";
 import { useForm } from "react-hook-form";
@@ -41,6 +41,7 @@ const Register = () => {
   });
   const [isLoading, setLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isAgree, setIsAgree] = useState(false);
 
   const handleRegister = (data: IForm) => {
     console.log(data);
@@ -48,13 +49,13 @@ const Register = () => {
     setTimeout(() => {
       setLoading(false);
       setIsSuccess(true);
+      reset();
     }, 2000);
-    reset();
   };
 
-  const cancel =()=>{
+  const cancel = () => {
     setIsSuccess(false);
-  }
+  };
   return (
     <>
       <Head>
@@ -64,7 +65,9 @@ const Register = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {isSuccess && <Success handleClose={cancel} />}
+        <AnimatePresence>
+        {isSuccess && <Success handleClose={cancel} key="kagura" />}
+        </AnimatePresence>
         <RegisterStyles>
           <div className="one">
             <h3>Register</h3>
@@ -122,9 +125,13 @@ const Register = () => {
                     id=""
                     placeholder="Enter the name of your group"
                   />
-                  <ErrorStyles className="down">
-                    {errors?.teamName && errors.teamName.message}
-                  </ErrorStyles>
+
+                  {errors?.teamName && (
+                    <ErrorStyles className="down">
+                      {" "}
+                      {errors.teamName.message}
+                    </ErrorStyles>
+                  )}
                 </motion.div>
                 <motion.div
                   className="form-ele"
@@ -141,9 +148,13 @@ const Register = () => {
                     id=""
                     placeholder="Enter your phone number"
                   />
-                  <ErrorStyles className="down">
-                    {errors?.phone && errors.phone.message}
-                  </ErrorStyles>
+
+                  {errors?.phone && (
+                    <ErrorStyles className="down">
+                      {" "}
+                      {errors.phone.message}{" "}
+                    </ErrorStyles>
+                  )}
                 </motion.div>
               </div>
               <div className="inner">
@@ -162,9 +173,13 @@ const Register = () => {
                     id=""
                     placeholder="Enter your email address"
                   />
-                  <ErrorStyles className="down">
-                    {errors?.email && errors.email.message}
-                  </ErrorStyles>
+
+                  {errors?.email && (
+                    <ErrorStyles className="down">
+                      {" "}
+                      {errors.email.message}{" "}
+                    </ErrorStyles>
+                  )}
                 </motion.div>
                 <motion.div
                   className="form-ele"
@@ -181,9 +196,13 @@ const Register = () => {
                     id=""
                     placeholder="What is your group project topic"
                   />
-                  <ErrorStyles className="down">
-                    {errors?.topic && errors.topic.message}
-                  </ErrorStyles>
+
+                  {errors?.topic && (
+                    <ErrorStyles className="down">
+                      {" "}
+                      {errors.topic.message}{" "}
+                    </ErrorStyles>
+                  )}
                 </motion.div>
               </div>
               <div className="inner xx">
@@ -213,7 +232,9 @@ const Register = () => {
                   </strong>
                 </SmallerTextStyles>
                 <div className="check">
-                  <CheckBox />
+                  <CheckBox onClick={() => setIsAgree(!isAgree)}>
+                    {isAgree && <Tick />}
+                  </CheckBox>
                   <SmallTextStyles>
                     I agreed with the event terms and conditions and privacy
                     policy
