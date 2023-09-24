@@ -177,11 +177,24 @@ export const floatingVariants = {
 
 export const LineVariant: Variants = {
   initial: {
-    height: 0,
+    y: -20,
     opacity: 0,
   },
   final: {
-    height: "100%",
+    y : 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
+export const Line2Variant: Variants = {
+  initial: {
+    width: 0,
+    opacity: 0,
+  },
+  final: {
+    width: "80%",
     opacity: 1,
     transition: {
       duration: 0.6,

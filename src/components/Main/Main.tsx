@@ -114,7 +114,7 @@ export const Hero = () => {
               <LargeBtnStyle onClick={() => router.push("/auth/register")}>Register</LargeBtnStyle>
             </motion.div>
           </div>
-          <Stopwatch />
+          <Stopwatch hours={18} minutes={0} seconds={0} />
         </div>
         <motion.div className="two"
         initial = "initial"
