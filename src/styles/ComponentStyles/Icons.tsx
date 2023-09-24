@@ -104,6 +104,10 @@ export const CheckBox = styled.div`
   flex-shrink: 0;
   border-radius: 0.125rem;
   border: 1px solid #fff;
+  cursor : pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ArrowDownStyle = styled.div`

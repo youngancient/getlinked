@@ -11,6 +11,8 @@ import { ArrowDown } from "../Icons/Icons";
 import { FunctionComponent, useState } from "react";
 import { LargeBtnStyle } from "@/styles/ComponentStyles/Buttons";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { SuccessVariants } from "@/animations/register";
 
 interface IDropdown {
   placeholder: string;
@@ -36,7 +38,12 @@ interface ICloseModal{
 export const Success:FunctionComponent<ICloseModal> = ({handleClose}) => {
   return (
     <SuccessStyles>
-      <div className="message">
+      <motion.div className="message"
+      initial = "initial"
+      animate = "final"
+      exit = "exit"
+      variants={SuccessVariants}
+      >
         <div className="one">
           <Image src="/assets/done.svg" alt="check" width={174} height={174} className="check" />
           <Image
@@ -69,7 +76,7 @@ export const Success:FunctionComponent<ICloseModal> = ({handleClose}) => {
         <div className="three">
           <LargeBtnStyle onClick={handleClose}>Back</LargeBtnStyle>
         </div>
-      </div>
+      </motion.div>
     </SuccessStyles>
   );
 };
