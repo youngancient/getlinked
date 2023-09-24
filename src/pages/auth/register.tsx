@@ -21,6 +21,7 @@ import axios from "axios";
 import { BASE_URL } from "../../../constants/libs";
 import { GroupSizes, IGroupSize } from "../../../constants/GroupSize";
 import { useRouter } from "next/router";
+import { NumberLiteralType } from "typescript";
 
 interface IForm {
   teamName: string;
@@ -28,8 +29,8 @@ interface IForm {
   email: string;
   topic: string;
   isAgreed: boolean;
-  category: string;
-  groupSize: string;
+  category: number | null;
+  groupSize: number | null;
 }
 const Register = () => {
   const {
@@ -46,26 +47,45 @@ const Register = () => {
       email: "",
       topic: "",
       isAgreed: false,
-      category: "",
-      groupSize: "",
+      category: null,
+      groupSize: null,
     },
   });
   const [isLoading, setLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isAgree, setIsAgree] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const [categories, setCategories] = useState<ICategory[] | null>(null);
   const [groupSizes, setGroupSizes] = useState<IGroupSize[]>(GroupSizes);
   const router = useRouter();
-  const handleRegister = (data: IForm) => {
-    console.log(data);
-    if (data.groupSize !== "" && data.category !== "") {
-      setLoading(true);
-      setTimeout(() => {
+  const handleRegister = async (formData: IForm) => {
+    console.log(formData);
+    if (formData.groupSize !== null && formData.category !== null) {
+      try {
+        setLoading(true);
+        const { data } = await axios.post(
+          `${BASE_URL}/hackathon/registration`,
+          {
+            email: formData.email,
+            phone_number: formData.phone,
+            team_name: formData.teamName,
+            group_size: formData.groupSize,
+            project_topic: formData.topic,
+            category: formData.category,
+            privacy_poclicy_accepted: true,
+          }
+        );
+        if (data) {
+          setLoading(false);
+          setIsSuccess(true);
+          reset();
+        }
+      } catch (error: any) {
         setLoading(false);
-        setIsSuccess(true);
-        reset();
-      }, 2000);
+        const message = error.response && error.response.data.email;
+        setErrorMsg(message[0]);
+      }
     }
   };
 
@@ -97,10 +117,10 @@ const Register = () => {
     const selectedSize = groupSizes?.find((ele) => ele.isSelected === true);
     const selectedCategory = categories?.find((ele) => ele.isSelected === true);
     if (selectedSize) {
-      setValue("groupSize", selectedSize.num);
+      setValue("groupSize", parseInt(selectedSize.num));
     }
     if (selectedCategory) {
-      setValue("category", selectedCategory.name);
+      setValue("category", parseInt(selectedCategory.id));
     }
   }, [categories, groupSizes]);
 
@@ -155,7 +175,10 @@ const Register = () => {
                 <DottedLine />
               </div>
             </div>
-            <h4>CREATE YOUR ACCOUNT</h4>
+            <div className="h">
+              <h4>CREATE YOUR ACCOUNT</h4>
+              {errorMsg && <ErrorStyles>{errorMsg}</ErrorStyles>}
+            </div>
             <form onSubmit={handleSubmit(handleRegister)}>
               <div className="inner">
                 <motion.div

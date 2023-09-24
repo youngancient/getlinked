@@ -79,8 +79,14 @@ export const RegisterStyles = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  }
+  .h{
     margin-top: 1rem;
     margin-bottom: 1.5rem;
+    p{
+      margin-top: 0.25rem;
+      font-size: 1rem;
+    }
   }
   input {
     font-family: Montserrat;
@@ -170,6 +176,9 @@ export const RegisterStyles = styled.div`
       width: 195px;
       height: 155px;
       flex-shrink: 0;
+    }
+    .h{
+      margin-bottom: 1rem;
     }
     h4 {
       font-size: 1.25rem;
