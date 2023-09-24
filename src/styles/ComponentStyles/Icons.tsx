@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { LineVariant } from "@/animations/animations";
+import { Line2Variant, LineVariant } from "@/animations/animations";
 
 export const LogoStyles = styled.h3`
   width: fit-content;
@@ -37,7 +37,11 @@ interface ILineStyles {
   height: string;
   width?: string;
 }
-export const Line = styled.div<ILineStyles>`
+export const Line = styled(motion.div).attrs<ILineStyles>(()=>({
+  initial : "initial",
+  whileInView : "final",
+  variants : LineVariant
+}))`
   width: ${(props) => (props.width ? props.width : "0.25rem")};
   background: #d434fe;
   height: ${(props) => props.height};
@@ -48,7 +52,11 @@ export const Line = styled.div<ILineStyles>`
 interface IHorizontalLineStyles {
   width: string;
 }
-export const HorizontalLine = styled.div<IHorizontalLineStyles>`
+export const HorizontalLine = styled(motion.div).attrs<IHorizontalLineStyles>(()=>({
+  initial : "initial",
+  whileInView : "final",
+  variants : Line2Variant
+}))`
   height: 0.25rem;
   background: #d434fe;
   width: ${(props) => props.width};

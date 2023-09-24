@@ -1,3 +1,4 @@
+import { ContactStyles } from "@/styles/PageStyles/Contact";
 import Head from "next/head";
 
 const Contact = () => {
@@ -10,7 +11,9 @@ const Contact = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        hello world | contact
+        <ContactStyles>
+          contact us
+        </ContactStyles>
       </main>
     </>
     );

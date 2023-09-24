@@ -69,6 +69,20 @@ export const XVector = () => {
   );
 };
 
+const PathVariant = {
+  initial : {
+    opacity : 0,
+    pathLength : 0,
+  },
+  final :{
+    opacity: 1,
+    pathLength : 1,
+    transition :{
+      delay: 0.25,
+      duration: 1
+    }
+  }
+}
 export const FancyRule = () => {
   return (
     <FancyRuleStyles>
@@ -80,10 +94,13 @@ export const FancyRule = () => {
         fill="none"
         className="big"
       >
-        <path
+        <motion.path
           d="M1 14.043C43.3333 5.7097 154.4 -5.95697 254 14.043"
           stroke="#FF26B9"
           strokeWidth="5"
+          initial = "initial"
+          animate= "final"
+          variants={PathVariant}
         />
       </svg>
       <svg
