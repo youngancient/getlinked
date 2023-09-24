@@ -119,7 +119,7 @@ export const RegisterStyles = styled.div`
     margin-top: 0.5rem;
   }
   @media (max-width: 998px) {
-    // padding: 4rem;
+    padding: 2rem 0rem;
     flex-direction: column;
     .inner {
       flex-direction: column;
@@ -133,7 +133,7 @@ export const RegisterStyles = styled.div`
     .two {
       border-radius: 0.75rem;
       background: transparent;
-      box-shadow: 0;
+      box-shadow: none;
       padding: 2rem;
     }
     .check {
@@ -168,7 +168,7 @@ export const RegisterStyles = styled.div`
     }
   }
   @media (max-width: 500px) {
-    // padding: 4rem 2rem;
+    padding: 1.5rem 0rem;
     .down {
       margin-top: 0rem;
     }

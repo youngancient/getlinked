@@ -88,7 +88,7 @@ export const ContactStyles = styled.div`
     form {
       border-radius: 0.75rem;
       background: transparent;
-      box-shadow: 0;
+      box-shadow: none;
     }
     .message textarea {
       height: 10rem;
