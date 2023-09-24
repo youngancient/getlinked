@@ -134,7 +134,7 @@ export const RegisterStyles = styled.div`
       display: flex;
       align-items: flex-start;
       div {
-        margin-top: 0.5rem;
+        margin-top: 0.25rem;
       }
     }
     .one h3 {
@@ -187,6 +187,18 @@ export const RegisterStyles = styled.div`
     }
     .down {
       margin-top: 0.25rem;
+    }
+    .check{
+      gap: 1rem;
+    }
+    .check p {
+      color: #fff;
+      font-family: Montserrat;
+      font-size: 0.625rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      // padding-right: 4px;
     }
   }
   @media (min-width: 998px) {
@@ -267,11 +279,11 @@ export const ButtonLoader = styled.div`
   animation: ${Rotate} 0.6s ease infinite;
 `;
 
-export const SuccessStyles = styled(motion.div).attrs(()=>({
-  initial : "initial",
-  animate : "final",
-  exit : "exit",
-  variants : OverlayVariants
+export const SuccessStyles = styled(motion.div).attrs(() => ({
+  initial: "initial",
+  animate: "final",
+  exit: "exit",
+  variants: OverlayVariants,
 }))`
   background: rgba(21, 14, 40, 0.93);
   z-index: 5;
@@ -309,14 +321,14 @@ export const SuccessStyles = styled(motion.div).attrs(()=>({
   .three button {
     width: 100%;
   }
-  .one{
+  .one {
     display: flex;
     justify-content: center;
     align-items: center;
-    .check{
+    .check {
       transform: translateX(30%);
     }
-    .success{
+    .success {
       transform: translateX(-30%);
     }
   }
@@ -327,10 +339,10 @@ export const SuccessStyles = styled(motion.div).attrs(()=>({
     gap: 0.25rem;
     justify-content: center;
   }
-  .p{
+  .p {
     margin-top: 1rem;
   }
-  .check p{
+  .check p {
     cursor: pointer;
   }
   @media (max-width: 998px) {
@@ -347,7 +359,7 @@ export const SuccessStyles = styled(motion.div).attrs(()=>({
     h3 {
       font-size: 1rem;
     }
-    .three{
+    .three {
       padding: 2rem;
       padding-top: 0rem;
     }

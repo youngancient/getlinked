@@ -16,18 +16,20 @@ import { AnimatePresence, motion } from "framer-motion";
 import { RegisterImgVariants, textVariant } from "@/animations/animations";
 import { Dropdown, Success } from "@/components/Auth/Register";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface IForm {
   teamName: string;
   phone: string;
   email: string;
   topic: string;
+  isAgreed: boolean;
 }
 const Register = () => {
   const {
     register,
     reset,
+    setValue,
     handleSubmit,
     formState: { errors },
   } = useForm<IForm>({
@@ -37,6 +39,7 @@ const Register = () => {
       phone: "",
       email: "",
       topic: "",
+      isAgreed: false,
     },
   });
   const [isLoading, setLoading] = useState(false);
@@ -56,6 +59,14 @@ const Register = () => {
   const cancel = () => {
     setIsSuccess(false);
   };
+
+  const handleAgree = () => {
+    setIsAgree(!isAgree);
+  };
+  useEffect(()=>{
+    setValue("isAgreed",isAgree);
+  },[isAgree]);
+
   return (
     <>
       <Head>
@@ -66,7 +77,7 @@ const Register = () => {
       </Head>
       <main>
         <AnimatePresence>
-        {isSuccess && <Success handleClose={cancel} key="kagura" />}
+          {isSuccess && <Success handleClose={cancel} key="kagura" />}
         </AnimatePresence>
         <RegisterStyles>
           <div className="one">
@@ -144,7 +155,13 @@ const Register = () => {
                   </label>
                   <input
                     type="number"
-                    {...register("phone", { required: "Phone is required" })}
+                    {...register("phone", {
+                      required: "Phone is required",
+                      minLength: {
+                        value: 11,
+                        message: "11 digits minimum",
+                      },
+                    })}
                     id=""
                     placeholder="Enter your phone number"
                   />
@@ -232,7 +249,7 @@ const Register = () => {
                   </strong>
                 </SmallerTextStyles>
                 <div className="check">
-                  <CheckBox onClick={() => setIsAgree(!isAgree)}>
+                  <CheckBox onClick={handleAgree}>
                     {isAgree && <Tick />}
                   </CheckBox>
                   <SmallTextStyles>
@@ -241,7 +258,7 @@ const Register = () => {
                   </SmallTextStyles>
                 </div>
                 <div className="btn">
-                  <LargeBtnStyle>
+                  <LargeBtnStyle disabled={!isAgree}>
                     {isLoading ? <ButtonLoader /> : "Register Now"}
                   </LargeBtnStyle>
                 </div>
