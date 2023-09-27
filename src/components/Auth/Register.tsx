@@ -15,6 +15,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { SuccessVariants } from "@/animations/register";
 import { IGroupSize } from "../../../constants/GroupSize";
+import { StarStyles } from "@/styles/ComponentStyles/Absolute";
 
 interface IDropdownA {
   placeholder: string;
@@ -151,6 +152,30 @@ export const Success: FunctionComponent<ICloseModal> = ({ handleClose }) => {
           />
         </div>
         <div className="two">
+          <StarStyles className="purple-1">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/purple-star.svg"
+            />
+          </StarStyles>
+          <StarStyles className="purple-2">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/purple-star.svg"
+            />
+          </StarStyles>
+          <StarStyles className="grey-1">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/grey-star.svg"
+            />
+          </StarStyles>
           <h3>Congratulations you have successfully Registered!</h3>
           <div className="p">
             <SmallerTextStyles>

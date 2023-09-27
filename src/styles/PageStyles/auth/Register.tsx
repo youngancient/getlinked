@@ -436,6 +436,7 @@ export const SuccessStyles = styled(motion.div).attrs(() => ({
     line-height: normal;
     width: 100%;
   }
+
   .three {
     width: 100%;
   }
@@ -466,10 +467,33 @@ export const SuccessStyles = styled(motion.div).attrs(() => ({
   .check p {
     cursor: pointer;
   }
+  .purple-1{
+    top: -2.5%;
+    left: 100%;
+  }
+  .purple-2{
+    left: 92%;
+    top: 90%;
+  }
+  .grey-1{
+    top: 30%;
+  }
   @media (max-width: 998px) {
     padding: 2rem;
     .message {
       padding: 4rem 2rem;
+    }
+    .purple-1{
+      top: -5%;
+      left: 95%;
+    }
+    .purple-2{
+      left: 90%;
+      top: 105%;
+    }
+    .grey-1{
+      left: 10%;
+      top: 40%;
     }
   }
   @media (max-width: 500px) {
