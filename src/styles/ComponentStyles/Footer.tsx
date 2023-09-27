@@ -78,11 +78,11 @@ export const FooterStyles = styled.footer`
         top: -200%;
         left: 50%;
     }
-    .f3, .f2{
+    .f3, .f2, .x{
         position: relative;
     }
     .white-1{
-        left: 5%;
+        left: -10%;
     }
     .white-2{
         top: 50%;
@@ -114,7 +114,7 @@ export const FooterStyles = styled.footer`
             left: 50%;
         }
         .white-1{
-            left: 5%;
+            left: -10%;
             top: 50%;
         }
         .grey-1{
@@ -134,7 +134,7 @@ export const FooterStyles = styled.footer`
             margin-top: 2rem;
         }
         .white-1{
-            left: 5%;
+            left: -10%;
             top: 30%;
         }
     }

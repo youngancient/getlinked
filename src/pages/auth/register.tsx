@@ -21,6 +21,7 @@ import axios from "axios";
 import { BASE_URL } from "../../../constants/libs";
 import { GroupSizes, IGroupSize } from "../../../constants/GroupSize";
 import { useRouter } from "next/router";
+import { SmallStarStyles, StarStyles } from "@/styles/ComponentStyles/Absolute";
 
 interface IForm {
   teamName: string;
@@ -154,15 +155,64 @@ const Register = () => {
               whileInView="final"
               variants={RegisterImgVariants}
             >
+              <StarStyles className="purple-1">
+                <Image
+                  alt="star"
+                  width={26}
+                  height={32}
+                  src="/assets/purple-star.svg"
+                />
+              </StarStyles>
+              <StarStyles className="purple-2">
+                <Image
+                  alt="star"
+                  width={26}
+                  height={32}
+                  src="/assets/purple-star.svg"
+                />
+              </StarStyles>
+              <StarStyles className="grey-1">
+                <Image
+                  alt="star"
+                  width={26}
+                  height={32}
+                  src="/assets/grey-star.svg"
+                />
+              </StarStyles>
               <Image
                 src="/assets/thumbsup.png"
                 alt="thumbs up"
                 width={717}
                 height={717}
+                className="thumbs"
               />
             </motion.div>
           </div>
           <div className="two">
+            <StarStyles className="grey-2">
+              <Image
+                alt="star"
+                width={26}
+                height={32}
+                src="/assets/grey-star.svg"
+              />
+            </StarStyles>
+            <StarStyles className="purple-3">
+              <Image
+                alt="star"
+                width={26}
+                height={32}
+                src="/assets/purple-star.svg"
+              />
+            </StarStyles>
+            <SmallStarStyles className="white-1">
+              <Image
+                alt="star"
+                width={26}
+                height={32}
+                src="/assets/white_star.svg"
+              />
+            </SmallStarStyles>
             <h3>Register</h3>
             <div className="text">
               <SmallTextStyles>Be part of this movement!</SmallTextStyles>
