@@ -133,6 +133,29 @@ export const RegisterStyles = styled.div`
   .down {
     margin-top: 0.5rem;
   }
+  .img, .two{
+    position: relative;
+  }
+  .grey-1{
+    top: 92%;
+    left: 20%;
+  }
+  .purple-2{
+    top: 75%;
+    left: 82%;
+  }
+  .purple-1{
+    top: 10%;
+    left: 15%;
+  }
+  .grey-2{
+    left: 70%;
+    top: 5%;
+  }
+  .white-1{
+    top: 100%;
+    left: 80%;
+  }
   @media (max-width: 998px) {
     padding: 2rem 0rem;
     flex-direction: column;
@@ -181,13 +204,27 @@ export const RegisterStyles = styled.div`
     .xx {
       flex-direction: row;
     }
+    .grey-1, .purple-1, .white-1{
+      display: none;
+    }
+    .purple-2{
+      left: 90%;
+    }
+    .purple-3{
+      left: 100%;
+      top: 70%;
+    }
+    .grey-2{
+      top: 22.5%;
+      left: -2.5%;
+    }
   }
   @media (max-width: 500px) {
     padding: 1.5rem 0rem;
     .down {
       margin-top: 0rem;
     }
-    .img img {
+    .img .thumbs {
       width: 195px;
       height: 155px;
       z-index: 5;
@@ -232,6 +269,17 @@ export const RegisterStyles = styled.div`
       line-height: normal;
       // padding-right: 4px;
     }
+    .purple-2{
+      left: 82%;
+    }
+    .purple-3{
+      left: 92%;
+      top: 70%;
+    }
+    .grey-2{
+      top: 25%;
+      left: 4%;
+    }
   }
   @media (min-width: 998px) {
     padding: 8rem 4rem;
@@ -251,6 +299,9 @@ export const RegisterStyles = styled.div`
       width: 100%;
     }
     .one h3 {
+      display: none;
+    }
+    .purple-3{
       display: none;
     }
   }

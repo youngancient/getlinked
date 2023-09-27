@@ -45,6 +45,7 @@ export const ContactStyles = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    resize: none;
   }
   input::placeholder,
   textarea::placeholder {
@@ -77,6 +78,25 @@ export const ContactStyles = styled.div`
     align-items: center;
     gap: 1rem;
   }
+  .one-a, form{
+    position: relative;
+  }
+  .purple-1{
+    top: -30%;
+    left: 5%;
+  }
+  .purple-2{
+    top: 75%;
+    left: -4%;
+  }
+  .grey-1{
+    top: -10%;
+    left: 80%;
+  }
+  .white-1{
+    top: 95%;
+    left: 102%;
+  }
   @media (max-width: 998px) {
     padding: 3rem;
     .one {
@@ -100,6 +120,18 @@ export const ContactStyles = styled.div`
       align-items: center;
       justify-content: center;
       margin-top: 4rem;
+    }
+    .grey-1{
+      top: 5%;
+      left: 90%;
+    }
+    .white-1{
+      top: 75%;
+      left: 102%;
+    }
+    .purple-2{
+      top: 95%;
+      left: 5%;
     }
   }
   @media (max-width: 500px) {

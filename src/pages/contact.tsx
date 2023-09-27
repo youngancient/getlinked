@@ -16,6 +16,8 @@ import { ButtonLoader } from "@/styles/PageStyles/auth/Register";
 import { textVariant } from "@/animations/animations";
 import { BASE_URL } from "../../constants/libs";
 import axios from "axios";
+import { SmallStarStyles, StarStyles } from "@/styles/ComponentStyles/Absolute";
+import Image from "next/image";
 
 interface IContactForm {
   firstName: string;
@@ -46,14 +48,13 @@ const Contact = () => {
     setIsSuccess(false);
   };
   const sendMessage = async (formData: IContactForm) => {
-    
     try {
       setLoading(true);
       const { data } = await axios.post(`${BASE_URL}/hackathon/contact-form`, {
         first_name: formData.firstName,
         email: formData.email,
         message: formData.message,
-        phone_number : formData.phone,
+        phone_number: formData.phone,
       });
       if (data) {
         setLoading(false);
@@ -80,6 +81,14 @@ const Contact = () => {
         <ContactStyles>
           <div className="one">
             <div className="one-a">
+              <SmallStarStyles className="purple-1">
+                <Image
+                  alt="star"
+                  width={26}
+                  height={32}
+                  src="/assets/purple-star.svg"
+                />
+              </SmallStarStyles>
               <motion.h3
                 initial="initial"
                 whileInView="final"
@@ -119,7 +128,31 @@ const Contact = () => {
           </div>
           <div className="two">
             <form onSubmit={handleSubmit(sendMessage)}>
+              <StarStyles className="white-1">
+                <Image
+                  alt="star"
+                  width={26}
+                  height={32}
+                  src="/assets/white_star.svg"
+                />
+              </StarStyles>
+              <StarStyles className="purple-2">
+                <Image
+                  alt="star"
+                  width={26}
+                  height={32}
+                  src="/assets/purple-star.svg"
+                />
+              </StarStyles>
               <div className="h">
+                <StarStyles className="grey-1">
+                  <Image
+                    alt="star"
+                    width={26}
+                    height={32}
+                    src="/assets/grey-star.svg"
+                  />
+                </StarStyles>
                 <motion.h3
                   initial="initial"
                   whileInView="final"
@@ -231,6 +264,7 @@ const Contact = () => {
                 </LargeBtnStyle>
               </div>
             </form>
+
             <div className="mobile">
               <div className="one-b">
                 <NormalTextStyles>Share on</NormalTextStyles>
