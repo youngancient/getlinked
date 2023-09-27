@@ -16,6 +16,7 @@ export const FooterStyles = styled.footer`
     }
     .two{
         margin-top: 4rem;
+        position: relative;
     }
     .two p{
         text-align: center;
@@ -73,6 +74,24 @@ export const FooterStyles = styled.footer`
     .follow{
         white-space: nowrap;
     }
+    .purple-1{
+        top: -200%;
+        left: 50%;
+    }
+    .f3, .f2{
+        position: relative;
+    }
+    .white-1{
+        left: 5%;
+    }
+    .white-2{
+        top: 50%;
+        left: 70%;
+    }
+    .grey-1{
+        left: 80%;
+        top: 10%;
+    }
     @media (max-width: 998px) {
         padding: 6rem 3rem 3rem 6rem;
         .one, .f23{
@@ -90,6 +109,18 @@ export const FooterStyles = styled.footer`
         .below, .f3{
             gap: 0.75rem;
         }
+        .purple-1{
+            top: -120%;
+            left: 50%;
+        }
+        .white-1{
+            left: 5%;
+            top: 50%;
+        }
+        .grey-1{
+            left: 40%;
+            top:  50%;
+        }
     }
     @media (max-width: 500px){
         padding: 3rem 1.5rem 1.5rem 3rem;
@@ -101,6 +132,10 @@ export const FooterStyles = styled.footer`
         }
         .xx{
             margin-top: 2rem;
+        }
+        .white-1{
+            left: 5%;
+            top: 30%;
         }
     }
     @media (min-width: 998px){

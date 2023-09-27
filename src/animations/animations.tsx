@@ -282,7 +282,6 @@ export const bellVariants:Variants = {
   final1: {
     opacity: 1,
     rotate: [-18, 0, 18, 0],
-    // rotate: [15, -15, 15],
     transition: {
       duration: 1,
       type: "spring",
@@ -300,5 +299,41 @@ export const bellVariants:Variants = {
     transition: {
       duration: 0.6,
     }
+  },
+};
+
+
+export const smallStarVariants:Variants = {
+  initial: {
+    scale: 0.75,
+    rotate: 0,
+  },
+  final: {
+    scale: 1,
+    rotate: 360,
+    transition: {
+      duration: 1.5,
+      ease: 'easeInOut',
+      repeat: Infinity,
+      repeatType: 'reverse',
+    },
+  },
+};
+
+export const starVariants:Variants = {
+  initial: {
+    scale: 0.75,
+    y: 0,
+  },
+  final: {
+    scale: 1,
+    y: -10,
+    color: 'blue',
+    transition: {
+      duration: 0.5,
+      repeat: Infinity,
+      repeatType: 'reverse',
+      ease: 'easeInOut',
+    },
   },
 };

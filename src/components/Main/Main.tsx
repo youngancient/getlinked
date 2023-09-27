@@ -41,7 +41,11 @@ import {
   textVariant,
 } from "@/animations/animations";
 import { useRouter } from "next/router";
-import { AbsoluteDiv } from "@/styles/ComponentStyles/Absolute";
+import {
+  AbsoluteDiv,
+  SmallStarStyles,
+  StarStyles,
+} from "@/styles/ComponentStyles/Absolute";
 
 export const Hero = () => {
   const router = useRouter();
@@ -52,6 +56,14 @@ export const Hero = () => {
         <div className="rule">
           <FancyRule />
         </div>
+        <StarStyles className="movestar">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/white_star.svg"
+          />
+        </StarStyles>
       </div>
       <div className="hero-main">
         <div className="one">
@@ -139,6 +151,14 @@ export const Hero = () => {
           whileInView="final"
           variants={HeroImgVariant}
         >
+          <StarStyles className="grey">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/grey-star.svg"
+            />
+          </StarStyles>
           <div className="img-one img">
             <Image
               alt="immersive vr"
@@ -182,6 +202,14 @@ export const Hero = () => {
 export const SectionTwo = () => {
   return (
     <SectionTwoStyles id="overview">
+      <StarStyles className="purple-star">
+        <Image
+          alt="star"
+          width={26}
+          height={32}
+          src="/assets/purple-star.svg"
+        />
+      </StarStyles>
       <div className="one">
         <Image
           alt="the big idea"
@@ -204,6 +232,14 @@ export const SectionTwo = () => {
             textOne="Introduction to getlinked"
             textTwo="tech Hackathon 1.0"
           />
+          <StarStyles className="purple-star-two">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/purple-star.svg"
+            />
+          </StarStyles>
         </CenterMobile>
 
         <CenterMobile>
@@ -225,6 +261,9 @@ export const SectionTwo = () => {
 export const SectionThree = () => {
   return (
     <SectionThreeStyles>
+      <StarStyles className="white-star">
+        <Image alt="star" width={26} height={32} src="/assets/white_star.svg" />
+      </StarStyles>
       <div className="one">
         <div className="absolute-div">
           <Image
@@ -250,6 +289,14 @@ export const SectionThree = () => {
       <div className="two">
         <CenterMobile>
           <SectionHead textOne="Rules and" textTwo="Guidelines" />
+          <StarStyles className="grey-star">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/grey-star.svg"
+            />
+          </StarStyles>
         </CenterMobile>
         <CenterMobile>
           <SmallTextStyles>
@@ -261,6 +308,14 @@ export const SectionThree = () => {
             creating solutions that can change the world, that&rsquo;s what
             we&rsquo;re all about!
           </SmallTextStyles>
+          <StarStyles className="t-white-star">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/white_star.svg"
+            />
+          </StarStyles>
         </CenterMobile>
       </div>
     </SectionThreeStyles>
@@ -270,6 +325,17 @@ export const SectionThree = () => {
 export const SectionFour = () => {
   return (
     <SectionFourStyles>
+      <StarStyles className="purple-1">
+        <Image
+          alt="star"
+          width={26}
+          height={32}
+          src="/assets/purple-star.svg"
+        />
+      </StarStyles>
+      <StarStyles className="grey-1">
+        <Image alt="star" width={26} height={32} src="/assets/grey-star.svg" />
+      </StarStyles>
       <div className="one">
         <div className="circle">
           <PurpleCircle />
@@ -307,6 +373,14 @@ export const SectionFour = () => {
           ))}
         </div>
         <div className="btn">
+          <StarStyles className="white-1">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/white_star.svg"
+            />
+          </StarStyles>
           <MediumBtnStyle>Read More</MediumBtnStyle>
         </div>
       </div>
@@ -395,6 +469,22 @@ export const FAQ = () => {
       </div>
       <div className="two">
         <CenterMobile>
+          <StarStyles className="purple-1">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/purple-star.svg"
+            />
+          </StarStyles>
+          <StarStyles className="purple-3">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/purple-star.svg"
+            />
+          </StarStyles>
           <SectionHead textOne="Frequently Asked" textTwo="Questions" />
         </CenterMobile>
         <CenterMobile>
@@ -402,8 +492,33 @@ export const FAQ = () => {
             We got answers to the questions that you might want to ask about
             <b>getlinked Hackathon 1.0</b>
           </SmallTextStyles>
+          <StarStyles className="purple-2">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/purple-star.svg"
+            />
+          </StarStyles>
         </CenterMobile>
         <div className="accordion">
+          <StarStyles className="white-1">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/white_star.svg"
+            />
+          </StarStyles>
+          <StarStyles className="grey-1">
+            <Image
+              alt="star"
+              width={26}
+              height={32}
+              src="/assets/grey-star.svg"
+            />
+          </StarStyles>
+
           <Accordion />
         </div>
       </div>
@@ -423,6 +538,20 @@ export const TimeLine = () => {
           event.
         </SmallTextStyles>
       </div>
+      <StarStyles className="purple-1">
+        <Image
+          alt="star"
+          width={26}
+          height={32}
+          src="/assets/purple-star.svg"
+        />
+      </StarStyles>
+      <StarStyles className="white-1">
+        <Image alt="star" width={26} height={32} src="/assets/white_star.svg" />
+      </StarStyles>
+      <StarStyles className="grey-1">
+        <Image alt="star" width={26} height={32} src="/assets/grey-star.svg" />
+      </StarStyles>
       <div className="two">
         <TimeLineComp />
         <MobileTimeLineComp />
@@ -440,6 +569,14 @@ export const Prizes = () => {
             <SectionHead textOne="Prizes and" textTwo="Rewards" />
           </CenterMobile>
           <CenterMobile>
+            <StarStyles className="purple-1">
+              <Image
+                alt="star"
+                width={26}
+                height={32}
+                src="/assets/purple-star.svg"
+              />
+            </StarStyles>
             <SmallTextStyles>
               Highlight of the prizes or rewards for winners and for
               participants.
@@ -448,6 +585,46 @@ export const Prizes = () => {
         </div>
       </div>
       <div className="two">
+        <StarStyles className="purple-2">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/purple-star.svg"
+          />
+        </StarStyles>
+        <StarStyles className="white-1">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/white_star.svg"
+          />
+        </StarStyles>
+        <StarStyles className="white-2">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/white_star.svg"
+          />
+        </StarStyles>
+        <StarStyles className="white-3">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/white_star.svg"
+          />
+        </StarStyles>
+        <StarStyles className="grey-1">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/grey-star.svg"
+          />
+        </StarStyles>
         <div className="absolute-div">
           <Image
             alt="purple"
@@ -535,6 +712,30 @@ export const Sponsors = () => {
         </SmallTextStyles>
       </div>
       <div className="two">
+        <StarStyles className="purple-1">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/purple-star.svg"
+          />
+        </StarStyles>
+        <SmallStarStyles className="purple-2">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/purple-star.svg"
+          />
+        </SmallStarStyles>
+        <StarStyles className="white-1">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/white_star.svg"
+          />
+        </StarStyles>
         <div className="absolute-div">
           <Image
             alt="purple"
@@ -620,6 +821,22 @@ export const PrivacyPolicy = () => {
         <div className="head-text">
           <div className="first">
             <CenterMobile>
+              <StarStyles className="purple-1">
+                <Image
+                  alt="star"
+                  width={26}
+                  height={32}
+                  src="/assets/purple-star.svg"
+                />
+              </StarStyles>
+              <StarStyles className="grey-1">
+                <Image
+                  alt="star"
+                  width={26}
+                  height={32}
+                  src="/assets/grey-star.svg"
+                />
+              </StarStyles>
               <SectionHead textOne="Privacy Policy and" textTwo="Terms" />
             </CenterMobile>
             <CenterMobile>
@@ -647,6 +864,14 @@ export const PrivacyPolicy = () => {
             </SmallTextStyles>
           </CenterMobile>
           <div className="policy-two">
+            <StarStyles className="purple-2">
+              <Image
+                alt="star"
+                width={26}
+                height={32}
+                src="/assets/purple-star.svg"
+              />
+            </StarStyles>
             <div className="policy-text">
               <div className="f1">
                 <h5>Licensing Policy</h5>
@@ -670,6 +895,38 @@ export const PrivacyPolicy = () => {
         </div>
       </div>
       <div className="two">
+        <SmallStarStyles className="purple-3">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/purple-star.svg"
+          />
+        </SmallStarStyles>
+        <SmallStarStyles className="white-1">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/white_star.svg"
+          />
+        </SmallStarStyles>
+        <SmallStarStyles className="white-2">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/white_star.svg"
+          />
+        </SmallStarStyles>
+        <SmallStarStyles className="grey-2">
+          <Image
+            alt="star"
+            width={26}
+            height={32}
+            src="/assets/grey-star.svg"
+          />
+        </SmallStarStyles>
         <Image
           src="/assets/secured.png"
           alt="secured"

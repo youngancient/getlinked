@@ -38,6 +38,11 @@ export const HeroStyles = styled.div`
       background-blend-mode: hard-light;
     }
   }
+  .movestar{
+    position: absolute;
+    left: 15%;
+    top: 15%;
+  }
   h1 {
     color: #fff;
     font-family: Clash Display;
@@ -124,7 +129,14 @@ export const HeroStyles = styled.div`
   .one {
     gap: 3rem;
   }
+  .grey{
+    top: 10%;
+    left: 15%;
+  }
   @media (max-width: 998px) {
+    .grey{
+      display: none;
+    }
     h1 {
       font-size: 3rem;
     }
@@ -175,6 +187,11 @@ export const HeroStyles = styled.div`
     .two {
       margin-top: 2rem;
     }
+    .movestar{
+      position: absolute;
+      left: 30%;
+      top: 7.5%;
+    }
   }
   @media (max-width: 640px) {
     .intro {
@@ -196,7 +213,6 @@ export const HeroStyles = styled.div`
       left: -20%;
     }
     .absolute-div .purple {
-      // display: none;
       width: 5.75rem;
       height: 5.625rem;
       flex-shrink: 0;
@@ -309,6 +325,14 @@ export const SectionTwoStyles = styled.div`
   .one {
     position: relative;
   }
+  .purple-star{
+    left: 10%;
+    top: 40%;
+  }
+  .purple-star-two{
+    right: 7.5%;
+    top: 30%;
+  }
   .arrow {
     position: absolute;
     bottom: 0;
@@ -319,6 +343,14 @@ export const SectionTwoStyles = styled.div`
     padding: 6rem 0rem;
     flex-direction: column;
     gap: 3rem;
+    .purple-star{
+      left: 10%;
+      top: 30%;
+    }
+    .purple-star-two{
+      right: 10%;
+      top: 70%;
+    }
     .two {
       align-items: center;
       gap: 2rem;
@@ -334,6 +366,13 @@ export const SectionTwoStyles = styled.div`
   }
   @media (max-width: 500px) {
     padding: 4rem 0rem;
+    .purple-star{
+      left: 10%;
+      top: 20%;
+    }
+    .purple-star-two{
+      top: 51%;
+    }
     .one img {
       width: 264.004px;
     }
@@ -371,7 +410,7 @@ export const CenterMobile = styled.div`
   }
 `;
 export const SectionThreeStyles = styled(SectionTwoStyles)`
-  // background: conic-gradient( from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg );
+  
   .circle {
     position: absolute;
     top: 15%;
@@ -383,6 +422,13 @@ export const SectionThreeStyles = styled(SectionTwoStyles)`
   .one img {
     position: relative;
     z-index: 5;
+  }
+  .grey-star{
+    left: 40%;
+    top: 25%;
+  }
+  .white-star{
+    top: 80%;
   }
   .one .absolute-div {
     position: absolute;
@@ -397,6 +443,14 @@ export const SectionThreeStyles = styled(SectionTwoStyles)`
     flex-shrink: 0;
   }
   @media (max-width: 998px) {
+    .grey-star{
+      left: 80%;
+      top: 50%;
+    }
+    .white-star{
+      top: 20%;
+      left: 10%;
+    }
     gap: 1.5rem;
     .circle {
       top: 12%;
@@ -410,6 +464,11 @@ export const SectionThreeStyles = styled(SectionTwoStyles)`
       left: 50%;
       top: 0%;
     }
+    .t-white-star{
+      left: 20%;
+      bottom: 3%;
+    }
+
   }
   @media (max-width: 500px) {
     .circle {
@@ -427,6 +486,9 @@ export const SectionThreeStyles = styled(SectionTwoStyles)`
   }
   @media (min-width: 998px) {
     padding-left: 11.5rem;
+    .t-white-star{
+      display: none;
+    }
     flex-direction: row-reverse;
     .one img {
       width: 664px;
@@ -453,6 +515,20 @@ export const SectionFourStyles = styled(SectionTwoStyles)`
       scale: 0.9;
     }
   }
+  .purple-1{
+    top: 10%;
+    left: 15%;
+  }
+  .white-1{
+    top: 50%;
+    left: -20%;
+  }
+  .grey-1{
+    left: 30%;
+  }
+  .btn{
+    position: relative;
+  }
   .judges {
     position: relative;
     z-index: 5;
@@ -477,6 +553,18 @@ export const SectionFourStyles = styled(SectionTwoStyles)`
         scale: 0.75;
       }
     }
+    .purple-1{
+      top: 2.5%;
+      left: 45%;
+    }
+    .grey-1{
+      top: 25%;
+      left: 55%;
+    }
+    .white-1{
+      top: 5%;
+      left: 200%;
+    }
   }
   @media (max-width: 500px) {
     .circle {
@@ -485,6 +573,13 @@ export const SectionFourStyles = styled(SectionTwoStyles)`
     .one img {
       width: 332px;
       height: 100%;
+    }
+    .white-1{
+      top: 5%;
+      left: 140%;
+    }
+    .grey-1{
+      top: 15%;
     }
   }
   @media (min-width: 998px) {
@@ -499,6 +594,7 @@ export const SectionFourStyles = styled(SectionTwoStyles)`
     }
   }
 `;
+
 
 export const SectionFiveStyles = styled(SectionTwoStyles)`
   .q-icons {
@@ -526,6 +622,26 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
     }
     flex-shrink: 0;
   }
+  .purple-2{
+    top: 25%;
+    left: 60%;
+  }
+  .purple-3{
+    top: 8%;
+    left: 75%;
+  }
+  .purple-1{
+    top: 12%;
+    left: 12%;
+  }
+  .grey-1{
+    top: 50%;
+    left: 55%;
+  }
+  .white-1{
+    top: 90%;
+    left: 80%;
+  }
   @media (max-width: 998px) {
     gap: 6rem;
     flex-direction: column-reverse;
@@ -546,6 +662,26 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
       right: 0;
       left: 30%;
       top: 0%;
+    }
+    .purple-1{
+      top: 5%;
+      left: 20%;
+    }
+    .purple-2{
+      left: 60%;
+      top: 65%;
+    }
+    .purple-3{
+      left: 20%;
+      top: 75%;
+    }
+    .grey-1{
+      left: 15%;
+      top: 81%;
+    }
+    .white-1{
+      top: 95%;
+      left: 80%;
     }
   }
   @media (max-width: 500px) {
@@ -594,6 +730,7 @@ export const SectionFiveStyles = styled(SectionTwoStyles)`
 `;
 
 export const TimeLineStyles = styled.div`
+position: relative;
   .two {
     margin-top: 12rem;
   }
@@ -617,6 +754,18 @@ export const TimeLineStyles = styled.div`
     line-height: 0%; /* 0rem */
   }
   background: #150e28;
+  .white-1{
+    top: 50%;
+    left: 85%;
+  }
+  .grey-1{
+    top: 85%;
+    left: 5%;
+  }
+  .purple-1{
+    top: 20%;
+    left: 20%;
+  }
   @media (max-width: 998px) {
     padding: 6rem 0rem;
     .one p {
@@ -627,6 +776,14 @@ export const TimeLineStyles = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    .purple-1{
+      top: 15%;
+      left: 30%;
+    }
+    .grey-1{
+      top: 96%;
+      left: 5%;
     }
   }
 
@@ -640,6 +797,10 @@ export const TimeLineStyles = styled.div`
     }
     .one p {
       width: 80%;
+    }
+    .purple-1{
+      top: 12%;
+      left: 30%;
     }
   }
   @media (min-width: 998px) {
@@ -742,7 +903,30 @@ export const PrizesStyle = styled.div`
     }
     flex-shrink: 0;
   }
-
+  .purple-2{
+    top: -50%;
+    left: 30%;
+  }
+  .purple-1{
+    // top: -50%;
+    left: 90%;
+  }
+  .white-1, .white-2{
+    top: 0%;
+    left: 40%;
+  }
+  .white-2{
+    top: 80%;
+    left: 35%;
+  }
+  .white-3{
+    top: 100%;
+    left: 15%;
+  }
+  .grey-1{
+    top: 110%;
+    left: 70%;
+  }
   @media (max-width: 998px) {
     padding: 4rem;
     .img img {
@@ -793,6 +977,29 @@ export const PrizesStyle = styled.div`
       width: 321px;
       height: 282px;
       flex-shrink: 0;
+    }
+    .purple-2{
+      top: -30%;
+      left: 15%;
+    }
+    .purple-1{
+      top: -10%;
+      left: 75%;
+    }
+    .white-2{
+      top: 52%;
+      left: 10%;
+    }
+    .white-1{
+      top: 60%;
+      left: 90%;
+    }
+    .white-3{
+      display: none;
+    }
+    .grey-1{
+      left: 50%;
+      top: 105%;
     }
   }
   @media (max-width: 500px) {
@@ -937,6 +1144,18 @@ export const SponsorsStyle = styled.div`
     bottom: -5%;
   }
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  .white-1{
+    top: 80%;
+    left: 50%;
+  }
+  .purple-2{
+    top: 10%;
+    left: 55%;
+  }
+  .purple-1{
+    top: -10%;
+    left: 7.5%;
+  }
   @media (max-width: 998px) {
     .two .absolute-div{
       position: absolute;
@@ -992,6 +1211,16 @@ export const SponsorsStyle = styled.div`
     }
     .horizontal-line {
       width: 8.26694rem;
+    }
+    .purple-2{
+      display: none;
+    }
+    .purple-1{
+      top: 0;
+    }
+    .white-1{
+      left: 85%;
+      top: 90%;
     }
   }
   @media (max-width: 500px) {
@@ -1092,6 +1321,7 @@ export const PrivacyStyles = styled.div`
   }
   .first {
     gap: 1rem;
+    position: relative;
   }
   .policy-text,
   .f2 {
@@ -1111,6 +1341,36 @@ export const PrivacyStyles = styled.div`
     position: relative;
     z-index: 5;
   }
+  .purple-1{
+    left: 95%;
+    top: 45%;
+  }
+  .grey-1{
+    top: -30%;
+    left: 60%;
+  }
+  .policy-two{
+    position: relative;
+  }
+  .purple-2{
+    top: 40%;
+    left: -30%;
+  }
+  .white-1{
+    top: 68%;
+    left: 20%;
+  }
+  .purple-3{
+    top: 55%;
+    left: 30%;
+  }
+  .white-2{
+    left: 80%;
+  }
+  .grey-2{
+    top: 80%;
+    left: 100%;
+  }
   @media (max-width: 998px) {
     flex-direction: column;
     padding: 4rem;
@@ -1129,15 +1389,43 @@ export const PrivacyStyles = styled.div`
       margin-top: 1.5rem;
     }
     .crypt {
-      top: 0;
+      top: -5%;
       left: 28%;
     }
     .crypt img {
       width: 349px;
-      height: 411px;
+      height: 430px;
     }
     .two {
-      margin-top: 4rem;
+      margin-top: 8rem;
+    }
+    .grey-1{
+      top: -50%;
+      left: 75%;
+    }
+    .purple-1{
+      top: 180%;
+      left: 90%;
+    }
+    .purple-2{
+      top: 55%;
+      left: -12%;
+    }
+    .white-1{
+      top: 75%;
+      left: 12%;
+    }
+    .white-2{
+      top :10%;
+      left: 80%;
+    }
+    .purple-3{
+      left: 20%;
+      top: 10%;
+    }
+    .grey-2{
+      top: 80%;
+      left: 90%;
     }
   }
   @media (max-width: 500px) {
@@ -1170,6 +1458,18 @@ export const PrivacyStyles = styled.div`
     .crypt img {
       width: 249px;
       height: 311px;
+    }
+    .purple-1{
+      top: 210%;
+      left: 90%;
+    }
+    .purple-3{
+      left: -5%;
+      top: 0;
+    }
+    .white-2{
+      top: 0;
+      left: 65%;
     }
   }
   @media (min-width: 998px) {
