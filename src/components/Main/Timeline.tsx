@@ -52,7 +52,7 @@ export const MobileTimeLineComp = () => {
                 <strong>{ele.head}</strong>
               </SmallTextStyles>
               <SmallTextStyles>{ele.desc}</SmallTextStyles>
-              <SmallTextStyles>
+              <SmallTextStyles className="date">
                 <strong>{ele.date}</strong>
               </SmallTextStyles>
             </div>
