@@ -218,6 +218,13 @@ export const SectionTwo = () => {
           height={0}
           sizes="100vw"
         />
+        <div className="onimg-txt">
+          <motion.h4
+          initial = "initial"
+          whileInView= "final"
+          variants={textVariant}
+          >The Big Idea!</motion.h4>
+        </div>
         <Image
           alt="arrow"
           src="/assets/arrow.svg"
